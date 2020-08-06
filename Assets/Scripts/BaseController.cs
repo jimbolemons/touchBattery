@@ -41,6 +41,18 @@ public class BaseController : MonoBehaviour {
     public RectTransform bottomMarker;
     bool switchs = true;
     bool moveDown = false;
+    bool moveUp = false;
+
+    bool moved = false;
+    private string hitTag;
+    bool timer = false;
+    float timerTime;
+    bool twoFig = false;
+
+    public float speed =1;
+    public
+
+    Vector3 touchStart;
     
 
    // public HighlightGroup_Group Exterior;
@@ -56,6 +68,7 @@ public class BaseController : MonoBehaviour {
         Cam = Camera.main.gameObject;
         CamParent = Cam.transform.parent.gameObject;
         instance = this.GetComponent<BaseController>();
+        data2.anchoredPosition = bottomMarker.position;
     }
     // Update is called once per frame
 
@@ -106,14 +119,33 @@ public class BaseController : MonoBehaviour {
     }
     void HandleDuelInput(float Magnitude)
     {
-        if (pastMagnitude != 0)
+        Debug.Log(pastMagnitude);
+        //if (pastMagnitude != 0)
+      //  {
+            if (pastMagnitude > 70){
             UpdateZoom(Magnitude - pastMagnitude);
+        }else{
+            Vector2 touchDeltapos = Input.GetTouch(0).deltaPosition;
+                CamParent.transform.Translate(-touchDeltapos.x *speed, -touchDeltapos.y *speed,0);
+        }
+       // }
         pastMagnitude = Magnitude;
+
+
+
+
     }
     void MoveText(float t)
     {
         //data2.anchoredPosition = Vector3.Lerp(Vector3.zero,bottomMarker.position,t);
-        data2.anchoredPosition = Vector3.MoveTowards(data2.anchoredPosition, bottomMarker.position,t);
+        data2.anchoredPosition = Vector3.MoveTowards(data2.anchoredPosition, bottomMarker.position,t * Time.deltaTime);
+
+
+    }
+    void MoveTextUp(float t)
+    {
+        //data2.anchoredPosition = Vector3.Lerp(Vector3.zero,bottomMarker.position,t);
+        data2.anchoredPosition = Vector3.MoveTowards(data2.anchoredPosition, Vector3.zero,t * Time.deltaTime);
 
 
     }
@@ -123,13 +155,46 @@ public class BaseController : MonoBehaviour {
    	Vector2 pDelta = Vector2.zero;
     void Update () 
     {
-        if (moveDown && data2.anchoredPosition.y >= bottomMarker.position.y)
+
+        if(CamParent.transform.position.x > 2)
         {
-            MoveText(1);
-            if(data2.anchoredPosition.y <= bottomMarker.position.y)
-            moveDown = false;
+            CamParent.transform.Translate(-10 *Time.deltaTime, 0,0);
 
         }
+        if(CamParent.transform.position.x < -2)
+        {
+            CamParent.transform.Translate(10 *Time.deltaTime, 0,0);
+
+        }
+        if(CamParent.transform.position.y > 2)
+        {
+            CamParent.transform.Translate(0, -10 *Time.deltaTime,0);
+
+        }
+        if(CamParent.transform.position.y < -2)
+        {
+           CamParent.transform.Translate(0, 10 * Time.deltaTime,0);
+        }
+        
+      
+
+
+
+        if (moveDown && data2.anchoredPosition.y >= bottomMarker.position.y)
+        {
+            MoveText(1000);
+            if(data2.anchoredPosition.y <= bottomMarker.position.y)
+           moveDown = false;
+
+        }
+         if (moveUp && data2.anchoredPosition.y <= Vector3.zero.y)
+        {
+            MoveTextUp(1000);
+            if(data2.anchoredPosition.y >= Vector3.zero.y)
+           moveUp = false;
+
+        }
+                    
         
       //  Debug.Log(moveDownasdasdadasdasd);
 
@@ -144,38 +209,80 @@ public class BaseController : MonoBehaviour {
 
             switch (touch.phase)
             {
-                //When a touch has first been detected, change the message and record the starting position
+                
                 case TouchPhase.Began:
-                    // Record initial touch position.
-                    startPos = touch.position;
-                    
-                    moveDown = true;
-                    if(switchs)
-                    {
-                        //dataPanel.SetActive(false);
-                        //data2.anchoredPosition = bottomMarker.position;
-                        switchs = false;
-                    }
-                    else
-                    {
-                        //dataPanel.SetActive(true);
-                       // data2.anchoredPosition = Vector3.zero;
-
-                        //dataPanel.SetActive(true);
-                        switchs = true;
-                    }
                    
-                    //dataPanel.transform.position = new Vector3(0,50,0);
-                    //message = "Begun ";
+                    startPos = touch.position;
+                    RaycastHit hit;
+                    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                    timer = true;
+                    if (Physics.Raycast(ray,out hit))
+                    {
+
+                        if(hit.collider != null)
+                        {
+
+                            hitTag = hit.collider.tag;
+                           
+
+                        }
+                        
+                    }
+                    
+                   
                     break;
 
                 //Determine if the touch is a moving touch
                 case TouchPhase.Moved:
-                    // Determine direction by comparing the current touch position with the initial one
-                    //direction = touch.position - startPos;
-                    //message = "Moving ";
+                   
+                   
+                    
                     break;
 
+                case TouchPhase.Ended:
+                     // Record initial touch position.
+                    
+                    RaycastHit hitEnd;
+                    Ray rayEnd = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                    if (Physics.Raycast(rayEnd,out hitEnd))
+                    {
+
+                        if(timerTime <= .1f)
+                        {
+                        if(hitEnd.collider != null)
+                        {
+
+                           
+                            if (hitEnd.collider.tag == hitTag)
+                            {
+
+
+                                moveUp = true;
+                                moveDown = false;
+                            }
+                            if(hitTag == "background" && hitEnd.collider.tag == "background")
+                            {
+                                 moveUp = false;
+                                moveDown = true;
+                            }
+
+                        }
+                        }
+                        
+                    }
+                    
+                      timer = false;
+                    break;
+
+            }
+            if(timer)
+            {
+                timerTime+= Time.deltaTime;
+                //Debug.Log(timerTime);
+
+            }else
+            {
+                timerTime = 0;
             }
 
         if(startPos.y > textLine.transform.position.y)
@@ -187,9 +294,14 @@ public class BaseController : MonoBehaviour {
                 Vector2 currentoffset = Input.GetTouch(0).position - Input.GetTouch(1).position;
                 float mag = currentoffset.magnitude;
                 HandleDuelInput(mag);
+
+                
+               
+
             } 
             else 
             {
+                
             	//Debug.Log("in  " + touchDelta);
             	if(pDelta == Vector2.zero && touchDelta == Vector2.zero)
                 	UpdateRotation(touchDelta);
