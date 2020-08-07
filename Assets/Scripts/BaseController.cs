@@ -31,6 +31,7 @@ public class BaseController : MonoBehaviour {
     public SpinVelocity HorizontalSpin = new SpinVelocity(0, 6f, 1f);
 
     public GameObject textLine;
+    public GameObject textLine2;
 
     public Vector2 startPos;
     public Vector2 direction;
@@ -249,38 +250,31 @@ public class BaseController : MonoBehaviour {
                         if(hit.collider != null)
                         {
 
-                            hitTag = hit.collider.tag;
-                           
+
+                            hitTag = hit.collider.tag;   
+                            Debug.Log(hitTag);                        
 
                         }
                         
-                    }
-                    
-                   
+                    }                  
                     break;
 
                 //Determine if the touch is a moving touch
-                case TouchPhase.Moved:
-                   
-                   
-                    
+                case TouchPhase.Moved:                  
                     break;
 
                 case TouchPhase.Ended:
-                     // Record initial touch position.
-                    
+                     // Record initial touch position.                    
                     RaycastHit hitEnd;
                     Ray rayEnd = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
                     if (Physics.Raycast(rayEnd,out hitEnd))
                     {
-
                         if(timerTime <= .15f)
                         {
                         if(hitEnd.collider != null)
-                        {
-
-                           
-                            if (hitTag == "batt" && hitEnd.collider.tag == hitTag)
+                        {          
+                                         
+                            if (hitTag == "Battery Cell to Pack Structural Bonding" && hitEnd.collider.tag == hitTag)
                             {
                                 moveUpBat = true;
                                 moveDownBat = false;
@@ -288,10 +282,8 @@ public class BaseController : MonoBehaviour {
                                 moveDown = true;
                             }
                             
-                            if (hitTag == "case" && hitEnd.collider.tag == hitTag)
+                            if (hitTag == "Betamate Adhesive Bonding" && hitEnd.collider.tag == hitTag)
                             {
-
-
                                moveUp = true;
                                 moveDown = false;
                                 moveUpBat = false;
@@ -305,27 +297,24 @@ public class BaseController : MonoBehaviour {
                                 moveUpBat = false;
                                 moveDownBat = true;
                             }
-
                         }
-                        }
-                        
-                    }
-                    
+                        }                        
+                    }                    
                       timer = false;
                     break;
 
             }
+
             if(timer)
             {
                 timerTime+= Time.deltaTime;
                 //Debug.Log(timerTime);
-
             }else
             {
                 timerTime = 0;
             }
 
-        if(startPos.y > textLine.transform.position.y)
+        if(startPos.y > textLine.transform.position.y || startPos.y > textLine2.transform.position.y )
         {           
             Vector2 touchDelta = Input.GetTouch(0).deltaPosition;
             //Debug.Log(Input.GetTouch(0).position);
@@ -334,22 +323,15 @@ public class BaseController : MonoBehaviour {
                 Vector2 currentoffset = Input.GetTouch(0).position - Input.GetTouch(1).position;
                 float mag = currentoffset.magnitude;
                 HandleDuelInput(mag);
-
-                
-               
-
             } 
             else 
-            {
-                
+            {                
             	//Debug.Log("in  " + touchDelta);
             	if(pDelta == Vector2.zero && touchDelta == Vector2.zero)
                 	UpdateRotation(touchDelta);
                 else if(touchDelta != Vector2.zero)
                 	UpdateRotation(touchDelta);
-                	
-
-                pDelta=touchDelta;
+                    pDelta=touchDelta;
                 pDoubleTouchOffset = Vector2.zero;
                 pastMagnitude = 0;
             }
@@ -358,7 +340,6 @@ public class BaseController : MonoBehaviour {
     }
         else if (Input.GetMouseButton(0) && canSpin && !StopNextMotion)
         {
-
             if (pMousePos == Vector3.zero)
             {
                 pMousePos = Input.mousePosition;
@@ -366,9 +347,7 @@ public class BaseController : MonoBehaviour {
             }
             Vector3 delta = Input.mousePosition - pMousePos;
             pDoubleTouchOffset = Vector2.zero;
-            UpdateRotation(delta);
-
-           
+            UpdateRotation(delta);       
 
              pMousePos = Input.mousePosition;
         }
