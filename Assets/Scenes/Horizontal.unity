@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 530673686}
   m_Layer: 0
   m_Name: Base
-  m_TagString: batt
+  m_TagString: case
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -704,7 +704,8 @@ MonoBehaviour:
   dataPanel: {fileID: 150460738}
   data2: {fileID: 150460739}
   bottomMarker: {fileID: 1207631066}
-  speed: 0.01
+  speed: 0.02
+  touchStart: {x: 0, y: 0, z: 0}
   StopNextMotion: 0
 --- !u!65 &530673686
 BoxCollider:
@@ -717,7 +718,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.94, y: 0.95, z: 5.93}
+  m_Size: {x: 3.94, y: 0.35, z: 5.93}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &530673690
 MonoBehaviour:
@@ -957,6 +958,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: batteryCase HiPoly
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e29f5bdb14f31ce468e14e5e2468358b,
+        type: 3}
+      propertyPath: m_TagString
+      value: batt
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e29f5bdb14f31ce468e14e5e2468358b, type: 3}
 --- !u!1 &728513737 stripped
@@ -971,6 +977,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 642909829}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &728513739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728513737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.2, z: 0.23}
+  m_Center: {x: 0.34, y: 0.76, z: -0.01}
 --- !u!1 &923618855
 GameObject:
   m_ObjectHideFlags: 0

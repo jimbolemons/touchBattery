@@ -36,23 +36,28 @@ public class BaseController : MonoBehaviour {
     public Vector2 direction;
 
    
-    public GameObject dataPanel;
-    public RectTransform data2;
+ 
+   
     public RectTransform bottomMarker;
-    bool switchs = true;
+    
     bool moveDown = false;
     bool moveUp = false;
+    public RectTransform data2;
+    bool moveDownBat = false;
+    bool moveUpBat = false;
+    public RectTransform dataBat;
+    
 
-    bool moved = false;
+    
     private string hitTag;
     bool timer = false;
     float timerTime;
-    bool twoFig = false;
+   
 
     public float speed =1;
-    public
+    
 
-    Vector3 touchStart;
+    
     
 
    // public HighlightGroup_Group Exterior;
@@ -69,6 +74,7 @@ public class BaseController : MonoBehaviour {
         CamParent = Cam.transform.parent.gameObject;
         instance = this.GetComponent<BaseController>();
         data2.anchoredPosition = bottomMarker.position;
+        dataBat.anchoredPosition = bottomMarker.position;
     }
     // Update is called once per frame
 
@@ -122,7 +128,7 @@ public class BaseController : MonoBehaviour {
         Debug.Log(pastMagnitude);
         //if (pastMagnitude != 0)
       //  {
-            if (pastMagnitude > 70){
+            if (pastMagnitude > 200){
             UpdateZoom(Magnitude - pastMagnitude);
         }else{
             Vector2 touchDeltapos = Input.GetTouch(0).deltaPosition;
@@ -135,19 +141,26 @@ public class BaseController : MonoBehaviour {
 
 
     }
-    void MoveText(float t)
+    void MoveTextDown(RectTransform d,float t)
     {
         //data2.anchoredPosition = Vector3.Lerp(Vector3.zero,bottomMarker.position,t);
-        data2.anchoredPosition = Vector3.MoveTowards(data2.anchoredPosition, bottomMarker.position,t * Time.deltaTime);
+        d.anchoredPosition = Vector3.MoveTowards(d.anchoredPosition, bottomMarker.position,t * Time.deltaTime);
 
 
     }
-    void MoveTextUp(float t)
+    void MoveTextUp(RectTransform d,float t)
     {
         //data2.anchoredPosition = Vector3.Lerp(Vector3.zero,bottomMarker.position,t);
-        data2.anchoredPosition = Vector3.MoveTowards(data2.anchoredPosition, Vector3.zero,t * Time.deltaTime);
+        d.anchoredPosition = Vector3.MoveTowards(d.anchoredPosition, Vector3.zero,t * Time.deltaTime);
+
+        
 
 
+    }
+    void CheckMoveup(bool up, RectTransform d )
+    {
+       
+            
     }
     
     
@@ -158,22 +171,22 @@ public class BaseController : MonoBehaviour {
 
         if(CamParent.transform.position.x > 2)
         {
-            CamParent.transform.Translate(-10 *Time.deltaTime, 0,0);
+            CamParent.transform.Translate(-20 *Time.deltaTime, 0,0);
 
         }
         if(CamParent.transform.position.x < -2)
         {
-            CamParent.transform.Translate(10 *Time.deltaTime, 0,0);
+            CamParent.transform.Translate(20 *Time.deltaTime, 0,0);
 
         }
         if(CamParent.transform.position.y > 2)
         {
-            CamParent.transform.Translate(0, -10 *Time.deltaTime,0);
+            CamParent.transform.Translate(0, -20 *Time.deltaTime,0);
 
         }
         if(CamParent.transform.position.y < -2)
         {
-           CamParent.transform.Translate(0, 10 * Time.deltaTime,0);
+           CamParent.transform.Translate(0, 20 * Time.deltaTime,0);
         }
         
       
@@ -182,16 +195,30 @@ public class BaseController : MonoBehaviour {
 
         if (moveDown && data2.anchoredPosition.y >= bottomMarker.position.y)
         {
-            MoveText(1000);
+            MoveTextDown(data2,1000);
             if(data2.anchoredPosition.y <= bottomMarker.position.y)
            moveDown = false;
 
         }
          if (moveUp && data2.anchoredPosition.y <= Vector3.zero.y)
         {
-            MoveTextUp(1000);
+            MoveTextUp(data2,1000);
             if(data2.anchoredPosition.y >= Vector3.zero.y)
            moveUp = false;
+
+        }
+         if (moveDownBat && dataBat.anchoredPosition.y >= bottomMarker.position.y)
+        {
+            MoveTextDown(dataBat,1000);
+            if(dataBat.anchoredPosition.y <= bottomMarker.position.y)
+           moveDownBat = false;
+
+        }
+         if (moveUpBat && dataBat.anchoredPosition.y <= Vector3.zero.y)
+        {
+            MoveTextUp(dataBat,1000);
+            if(dataBat.anchoredPosition.y >= Vector3.zero.y)
+           moveUpBat = false;
 
         }
                     
@@ -247,23 +274,36 @@ public class BaseController : MonoBehaviour {
                     if (Physics.Raycast(rayEnd,out hitEnd))
                     {
 
-                        if(timerTime <= .1f)
+                        if(timerTime <= .15f)
                         {
                         if(hitEnd.collider != null)
                         {
 
                            
-                            if (hitEnd.collider.tag == hitTag)
+                            if (hitTag == "batt" && hitEnd.collider.tag == hitTag)
+                            {
+                                moveUpBat = true;
+                                moveDownBat = false;
+                                 moveUp = false;
+                                moveDown = true;
+                            }
+                            
+                            if (hitTag == "case" && hitEnd.collider.tag == hitTag)
                             {
 
 
-                                moveUp = true;
+                               moveUp = true;
                                 moveDown = false;
+                                moveUpBat = false;
+                                moveDownBat = true;
                             }
+
                             if(hitTag == "background" && hitEnd.collider.tag == "background")
                             {
                                  moveUp = false;
                                 moveDown = true;
+                                moveUpBat = false;
+                                moveDownBat = true;
                             }
 
                         }

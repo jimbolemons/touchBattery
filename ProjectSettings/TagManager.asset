@@ -6,6 +6,7 @@ TagManager:
   tags:
   - batt
   - background
+  - case
   layers:
   - Default
   - TransparentFX
