@@ -73,7 +73,7 @@ Material:
     - _Emission: 0
     - _Fade: 1
     - _GlossMapScale: 0
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _GlossyReflections: 0
     - _GradiantWidth: 40
     - _Gradient: 0
