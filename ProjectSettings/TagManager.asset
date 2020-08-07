@@ -6,7 +6,20 @@ TagManager:
   tags:
   - batt
   - background
-  - case
+  - Battery Cell to Pack Structural Bonding
+  - Betamate Adhesive Bonding
+  - Cell to Cell Insulation
+  - Cover Sealing
+  - Fluid Connectors
+  - HV Connector System
+  - Innovative Design for Hybrid Cooling Plate
+  - Thermal Conductive Interface
+  - Structural Bonding
+  - Prismatic Cell Bonding
+  - Plastic Cell Holders
+  - Module End Plates
+  - LV Connector
+  - Immersion Cooling
   layers:
   - Default
   - TransparentFX

@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 84ea092ddd62b5e41a6c0eea1088f08c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -72,7 +72,7 @@ Material:
     - _Emission: 0
     - _Fade: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.628
+    - _Glossiness: 0.893
     - _GlossyReflections: 1
     - _GradiantWidth: 40
     - _Gradient: 1
@@ -86,7 +86,7 @@ Material:
     - _Parallax: 0.02
     - _ShowBackSide: 1
     - _SmoothnessTextureChannel: 0
-    - _SpecScale: 1
+    - _SpecScale: 0.529
     - _SpecularHighlights: 1
     - _Split: 0
     - _SrcBlend: 5
@@ -96,7 +96,7 @@ Material:
     - _Color: {r: 0.64705884, g: 0.64705884, b: 0.64705884, a: 1}
     - _ColorA: {r: 1, g: 1, b: 1, a: 0}
     - _ColorB: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorC: {r: 0.64705884, g: 0.64705884, b: 0.64705884, a: 1}
+    - _ColorC: {r: 0.42352942, g: 0.42352942, b: 0.42352942, a: 1}
     - _ColorD: {r: 1, g: 1, b: 1, a: 1}
     - _ColorE: {r: 0.64705884, g: 0.64705884, b: 0.64705884, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}

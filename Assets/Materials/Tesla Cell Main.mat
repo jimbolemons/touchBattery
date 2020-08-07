@@ -68,21 +68,21 @@ Material:
     - _Emission: 0
     - _Fade: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.481
+    - _Glossiness: 0.463
     - _GlossyReflections: 1
     - _GradiantWidth: 40
     - _Gradient: 1
     - _HighlightActive: 0
     - _HighlightAmount: 0
     - _MaxTransparacy: 1
-    - _Metallic: 0.499
+    - _Metallic: 0.467
     - _Mode: 2
     - _NormScale: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _ShowBackSide: 1
     - _SmoothnessTextureChannel: 0
-    - _SpecScale: 1
+    - _SpecScale: 0.487
     - _SpecularHighlights: 1
     - _Split: 0
     - _SrcBlend: 5

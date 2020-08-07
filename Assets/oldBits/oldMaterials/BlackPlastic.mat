@@ -72,7 +72,7 @@ Material:
     - _HighlightActive: 0
     - _HighlightAmount: 0
     - _MaxTransparacy: 1
-    - _Metallic: 0.865
+    - _Metallic: 0.807
     - _Mode: 0
     - _NormScale: 1
     - _OcclusionStrength: 1
