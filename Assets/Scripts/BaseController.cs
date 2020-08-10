@@ -32,21 +32,46 @@ public class BaseController : MonoBehaviour {
 
     public GameObject textLine;
     public GameObject textLine2;
+    public GameObject textLine3;
+    public GameObject textLine4;
+    public GameObject textLine5;
+    public GameObject textLine6;
+    public GameObject textLine7;
+    public GameObject textLine8;
+    public GameObject textLine9;
+    public GameObject textLine10;
+    public GameObject textLine11;
+    public GameObject textLine12;
+    public GameObject textLine13;
+    public GameObject textLine14;
 
     public Vector2 startPos;
     public Vector2 direction;
 
    
- 
+ int state = 0;
    
     public RectTransform bottomMarker;
     
     bool moveDown = false;
     bool moveUp = false;
-    public RectTransform data2;
-    bool moveDownBat = false;
-    bool moveUpBat = false;
-    public RectTransform dataBat;
+    public RectTransform Adhesivebonding;
+    public RectTransform Coversealing;
+    public RectTransform HVconnectorsystem;
+    public RectTransform LVconnector;
+    public RectTransform FluidConnectors;
+    public RectTransform Structuralbonding;
+    public RectTransform ModuleEndPlates;
+    public RectTransform InnovativeDesignforHybridCoolingPlate;
+    public RectTransform ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules;
+    public RectTransform PlasticCellHolders;
+    public RectTransform BatteryCelltoPackStructuralBonding;
+    public RectTransform PrismaticCellBonding;
+    public RectTransform Celltocellinsulation;
+    public RectTransform ImmersionCooling;
+    //bool moveDownBat = false;
+    //bool moveUpBat = false;
+   
     
 
     
@@ -74,8 +99,7 @@ public class BaseController : MonoBehaviour {
         Cam = Camera.main.gameObject;
         CamParent = Cam.transform.parent.gameObject;
         instance = this.GetComponent<BaseController>();
-        data2.anchoredPosition = bottomMarker.position;
-        dataBat.anchoredPosition = bottomMarker.position;
+        
     }
     // Update is called once per frame
 
@@ -189,10 +213,8 @@ public class BaseController : MonoBehaviour {
         {
            CamParent.transform.Translate(0, 20 * Time.deltaTime,0);
         }
-        
-      
 
-
+        /*
 
         if (moveDown && data2.anchoredPosition.y >= bottomMarker.position.y)
         {
@@ -222,6 +244,268 @@ public class BaseController : MonoBehaviour {
            moveUpBat = false;
 
         }
+        */
+
+        switch(state)
+        {
+            case 0:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 1:
+            MoveTextUp(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+            MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);            
+            break;
+
+            case 2:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextUp(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 3:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextUp(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 4:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextUp(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 5:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextUp(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 6:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextUp(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 7:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextUp(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 8:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextUp(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 9:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextUp(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 10:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextUp(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 11:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextUp(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 12:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextUp(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 13:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextUp(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+            break;
+
+            case 14:
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextUp(ImmersionCooling,1000);
+            break;
+
+
+        }
+      
                     
         
       //  Debug.Log(moveDownasdasdadasdasd);
@@ -272,31 +556,78 @@ public class BaseController : MonoBehaviour {
                         if(timerTime <= .15f)
                         {
                         if(hitEnd.collider != null)
-                        {          
-                                         
-                            if (hitTag == "Battery Cell to Pack Structural Bonding" && hitEnd.collider.tag == hitTag)
+                        {       
+                             if(hitTag == "background" && hitEnd.collider.tag == "background")
                             {
-                                moveUpBat = true;
-                                moveDownBat = false;
-                                 moveUp = false;
-                                moveDown = true;
-                            }
-                            
+                                state = 0;                              
+                            } 
                             if (hitTag == "Betamate Adhesive Bonding" && hitEnd.collider.tag == hitTag)
                             {
-                               moveUp = true;
-                                moveDown = false;
-                                moveUpBat = false;
-                                moveDownBat = true;
+                              state = 1;
+                            }
+                            if (hitTag == "Cover Sealing" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 2;
+                            }
+                            if (hitTag == "HV Connector System" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 3;
+                            }
+                             if (hitTag == "LV Connector" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 4;
+                            }
+                             if (hitTag == "Fluid Connectors" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 5;
+                            }
+                             if (hitTag == "Structural bonding" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 6;
                             }
 
-                            if(hitTag == "background" && hitEnd.collider.tag == "background")
+                            if (hitTag == "Module End Plates" && hitEnd.collider.tag == hitTag)
                             {
-                                 moveUp = false;
-                                moveDown = true;
-                                moveUpBat = false;
-                                moveDownBat = true;
+                               state = 7;
                             }
+
+                            if (hitTag == "Innovative Design for Hybrid Cooling Plate" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 8;
+                            }
+
+                            if (hitTag == "Thermal Conductive Interface" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 9;
+                            }
+
+                            if (hitTag == "Plastic Cell Holders" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 10;
+                            }
+
+                            if (hitTag == "Battery Cell to Pack Structural Bonding" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 11;
+                            }
+
+                            if (hitTag == "Prismatic Cell Bonding" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 12;
+                            }
+
+                            if (hitTag == "Cell to cell insulation" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 13;
+                            }
+
+                            if (hitTag == "Immersion Cooling" && hitEnd.collider.tag == hitTag)
+                            {
+                               state = 14;
+                            }
+
+
+                           
                         }
                         }                        
                     }                    
@@ -314,7 +645,7 @@ public class BaseController : MonoBehaviour {
                 timerTime = 0;
             }
 
-        if(startPos.y > textLine.transform.position.y || startPos.y > textLine2.transform.position.y )
+        if(startPos.y > textLine.transform.position.y && startPos.y > textLine2.transform.position.y&& startPos.y > textLine3.transform.position.y&& startPos.y > textLine4.transform.position.y&& startPos.y > textLine5.transform.position.y )
         {           
             Vector2 touchDelta = Input.GetTouch(0).deltaPosition;
             //Debug.Log(Input.GetTouch(0).position);
