@@ -196,22 +196,22 @@ public class BaseController : MonoBehaviour {
 
         if(CamParent.transform.position.x > 2)
         {
-            CamParent.transform.Translate(-20 *Time.deltaTime, 0,0);
+            CamParent.transform.Translate(-3 *Time.deltaTime, 0,0);
 
         }
         if(CamParent.transform.position.x < -2)
         {
-            CamParent.transform.Translate(20 *Time.deltaTime, 0,0);
+            CamParent.transform.Translate(3 *Time.deltaTime, 0,0);
 
         }
         if(CamParent.transform.position.y > 2)
         {
-            CamParent.transform.Translate(0, -20 *Time.deltaTime,0);
+            CamParent.transform.Translate(0, -3 *Time.deltaTime,0);
 
         }
         if(CamParent.transform.position.y < -2)
         {
-           CamParent.transform.Translate(0, 20 * Time.deltaTime,0);
+           CamParent.transform.Translate(0, 3 * Time.deltaTime,0);
         }
 
         /*
@@ -746,11 +746,11 @@ public class BaseController : MonoBehaviour {
                 if (HorizontalSpin.velocity > 0)
                     HorizontalSpin.velocity = 0;
             }
-        this.transform.localEulerAngles += Vector3.up * -HorizontalSpin.velocity/5;
+        this.transform.localEulerAngles -= (Vector3.up * HorizontalSpin.velocity/2)/10;
 
             if (VerticalSpin.velocity > 0)
             {
-                VerticalSpin.velocity -= Time.fixedDeltaTime * VerticalSpin.DecayMultiplier;
+                VerticalSpin.velocity -= Time.fixedDeltaTime * VerticalSpin.DecayMultiplier /10;
                 if (VerticalSpin.velocity < 0)
                     VerticalSpin.velocity = 0;
             }
@@ -761,7 +761,7 @@ public class BaseController : MonoBehaviour {
                     VerticalSpin.velocity = 0;
             }
             
-            CamParent.transform.eulerAngles += Vector3.right * VerticalSpin.velocity/2;
+            CamParent.transform.eulerAngles += (Vector3.right * VerticalSpin.velocity/2)/10 ;
             ClampCameraAngles();
 
         }

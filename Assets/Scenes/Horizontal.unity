@@ -2491,7 +2491,7 @@ MonoBehaviour:
   PrismaticCellBonding: {fileID: 156180731}
   Celltocellinsulation: {fileID: 1413605031}
   ImmersionCooling: {fileID: 1171739770}
-  speed: 0.005
+  speed: 0.0009
   StopNextMotion: 0
 --- !u!65 &530673686
 BoxCollider:
