@@ -556,11 +556,15 @@ public class BaseController : MonoBehaviour {
                         if(timerTime <= .15f)
                         {
                         if(hitEnd.collider != null)
-                        {       
+                        {    
+
+                                if(startPos.y > textLine.transform.position.y && startPos.y > textLine2.transform.position.y&& startPos.y > textLine3.transform.position.y&& startPos.y > textLine4.transform.position.y&& startPos.y > textLine5.transform.position.y&& startPos.y > textLine6.transform.position.y&& startPos.y > textLine7.transform.position.y&& startPos.y > textLine8.transform.position.y&& startPos.y > textLine9.transform.position.y&& startPos.y > textLine10.transform.position.y&& startPos.y > textLine11.transform.position.y&& startPos.y > textLine12.transform.position.y&& startPos.y > textLine13.transform.position.y&& startPos.y > textLine14.transform.position.y )
+        {
                              if(hitTag == "background" && hitEnd.collider.tag == "background")
                             {
                                 state = 0;                              
                             } 
+        }
                             if (hitTag == "Betamate Adhesive Bonding" && hitEnd.collider.tag == hitTag)
                             {
                               state = 1;
@@ -645,7 +649,7 @@ public class BaseController : MonoBehaviour {
                 timerTime = 0;
             }
 
-        if(startPos.y > textLine.transform.position.y && startPos.y > textLine2.transform.position.y&& startPos.y > textLine3.transform.position.y&& startPos.y > textLine4.transform.position.y&& startPos.y > textLine5.transform.position.y )
+        if(startPos.y > textLine.transform.position.y && startPos.y > textLine2.transform.position.y&& startPos.y > textLine3.transform.position.y&& startPos.y > textLine4.transform.position.y&& startPos.y > textLine5.transform.position.y&& startPos.y > textLine6.transform.position.y&& startPos.y > textLine7.transform.position.y&& startPos.y > textLine8.transform.position.y&& startPos.y > textLine9.transform.position.y&& startPos.y > textLine10.transform.position.y&& startPos.y > textLine11.transform.position.y&& startPos.y > textLine12.transform.position.y&& startPos.y > textLine13.transform.position.y&& startPos.y > textLine14.transform.position.y )
         {           
             Vector2 touchDelta = Input.GetTouch(0).deltaPosition;
             //Debug.Log(Input.GetTouch(0).position);
@@ -659,9 +663,9 @@ public class BaseController : MonoBehaviour {
             {                
             	//Debug.Log("in  " + touchDelta);
             	if(pDelta == Vector2.zero && touchDelta == Vector2.zero)
-                	UpdateRotation(touchDelta);
+                	UpdateRotation(touchDelta/5);
                 else if(touchDelta != Vector2.zero)
-                	UpdateRotation(touchDelta);
+                	UpdateRotation(touchDelta/5);
                     pDelta=touchDelta;
                 pDoubleTouchOffset = Vector2.zero;
                 pastMagnitude = 0;
@@ -705,29 +709,44 @@ public class BaseController : MonoBehaviour {
             }
             pDoubleTouchOffset = Vector2.zero;
             pDelta =  Vector2.zero;
+
+
+
             if (StopNextMotion)
                 StopNextMotion = false;
 
-            if (HorizontalSpin.velocity > HorizontalSpin.Min)
+           // if (HorizontalSpin.velocity > HorizontalSpin.Min)
+            //{
+            //    HorizontalSpin.velocity -= Time.fixedDeltaTime * HorizontalSpin.DecayMultiplier *5;
+            //    if (HorizontalSpin.velocity < HorizontalSpin.Min)
+            //        HorizontalSpin.velocity = HorizontalSpin.Min;
+           // }
+            //else if (HorizontalSpin.velocity < -HorizontalSpin.Min)
+            //{
+               // HorizontalSpin.velocity += Time.fixedDeltaTime * HorizontalSpin.DecayMultiplier*5;
+               // if (HorizontalSpin.velocity > -HorizontalSpin.Min)
+               //     HorizontalSpin.velocity = -HorizontalSpin.Min;
+            //}
+
+ //this.transform.localEulerAngles -= new Vector3(0, HorizontalSpin.velocity, 0);
+
+
+
+            
+
+ if (HorizontalSpin.velocity > 0)
             {
                 HorizontalSpin.velocity -= Time.fixedDeltaTime * HorizontalSpin.DecayMultiplier;
-                if (HorizontalSpin.velocity < HorizontalSpin.Min)
-                    HorizontalSpin.velocity = HorizontalSpin.Min;
+                if (HorizontalSpin.velocity < 0)
+                    HorizontalSpin.velocity = 0;
             }
-            else if (HorizontalSpin.velocity < -HorizontalSpin.Min)
+            else if (HorizontalSpin.velocity < 0)
             {
                 HorizontalSpin.velocity += Time.fixedDeltaTime * HorizontalSpin.DecayMultiplier;
-                if (HorizontalSpin.velocity > -HorizontalSpin.Min)
-                    HorizontalSpin.velocity = -HorizontalSpin.Min;
+                if (HorizontalSpin.velocity > 0)
+                    HorizontalSpin.velocity = 0;
             }
-
-
-
-
-
-            this.transform.localEulerAngles -= new Vector3(0, HorizontalSpin.velocity, 0);
-
-
+        this.transform.localEulerAngles += Vector3.up * -HorizontalSpin.velocity/5;
 
             if (VerticalSpin.velocity > 0)
             {
@@ -742,7 +761,7 @@ public class BaseController : MonoBehaviour {
                     VerticalSpin.velocity = 0;
             }
             
-            CamParent.transform.eulerAngles += Vector3.right * VerticalSpin.velocity;
+            CamParent.transform.eulerAngles += Vector3.right * VerticalSpin.velocity/2;
             ClampCameraAngles();
 
         }
