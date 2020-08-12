@@ -72,7 +72,9 @@ public class BaseController : MonoBehaviour {
     //bool moveDownBat = false;
     //bool moveUpBat = false;
    
-    
+    public Material caseMat;
+    bool caseMatFade = false;
+    float caseMatFloat = 0;
 
     
     private string hitTag;
@@ -263,6 +265,14 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             
+                 if (caseMatFloat>0){
+                 caseMat.SetFloat("Vector1_824EC8D0",caseMatFloat -=Time.deltaTime);
+                 
+                 }else{
+                     caseMatFloat = 0;
+                 }
+             
             break;
 
             case 1:
@@ -279,7 +289,13 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
-             MoveTextDown(ImmersionCooling,1000);            
+             MoveTextDown(ImmersionCooling,1000);   
+             if (caseMatFloat<1){
+                 caseMat.SetFloat("Vector1_824EC8D0",caseMatFloat +=Time.deltaTime);
+                 
+                 }else{
+                     caseMatFloat = 1;
+                 }         
             break;
 
             case 2:
@@ -562,72 +578,87 @@ public class BaseController : MonoBehaviour {
         {
                              if(hitTag == "background" && hitEnd.collider.tag == "background")
                             {
-                                state = 0;                              
+                                state = 0;  
+                                 //todo fade everything in                            
                             } 
         }
                             if (hitTag == "Betamate Adhesive Bonding" && hitEnd.collider.tag == hitTag)
                             {
                               state = 1;
+                              //todo fade everything but this
                             }
                             if (hitTag == "Cover Sealing" && hitEnd.collider.tag == hitTag)
                             {
                                state = 2;
+                                //todo fade everything but this
                             }
                             if (hitTag == "HV Connector System" && hitEnd.collider.tag == hitTag)
                             {
                                state = 3;
+                                //todo fade everything but this
                             }
                              if (hitTag == "LV Connector" && hitEnd.collider.tag == hitTag)
                             {
                                state = 4;
+                                //todo fade everything but this
                             }
                              if (hitTag == "Fluid Connectors" && hitEnd.collider.tag == hitTag)
                             {
                                state = 5;
+                                //todo fade everything but this
                             }
                              if (hitTag == "Structural bonding" && hitEnd.collider.tag == hitTag)
                             {
                                state = 6;
+                                //todo fade everything but this
                             }
 
                             if (hitTag == "Module End Plates" && hitEnd.collider.tag == hitTag)
                             {
                                state = 7;
+                                //todo fade everything but this
                             }
 
                             if (hitTag == "Innovative Design for Hybrid Cooling Plate" && hitEnd.collider.tag == hitTag)
                             {
                                state = 8;
+                                //todo fade everything but this
                             }
 
                             if (hitTag == "Thermal Conductive Interface" && hitEnd.collider.tag == hitTag)
                             {
                                state = 9;
+                                //todo fade everything but this
                             }
 
                             if (hitTag == "Plastic Cell Holders" && hitEnd.collider.tag == hitTag)
                             {
                                state = 10;
+                                //todo fade everything but this
                             }
 
                             if (hitTag == "Battery Cell to Pack Structural Bonding" && hitEnd.collider.tag == hitTag)
                             {
                                state = 11;
+                                //todo fade everything but this
                             }
 
                             if (hitTag == "Prismatic Cell Bonding" && hitEnd.collider.tag == hitTag)
                             {
                                state = 12;
+                                //todo fade everything but this
                             }
 
                             if (hitTag == "Cell to cell insulation" && hitEnd.collider.tag == hitTag)
                             {
                                state = 13;
+                                //todo fade everything but this
                             }
 
                             if (hitTag == "Immersion Cooling" && hitEnd.collider.tag == hitTag)
                             {
                                state = 14;
+                                //todo fade everything but this
                             }
 
 
