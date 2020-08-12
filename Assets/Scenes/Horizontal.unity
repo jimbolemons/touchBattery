@@ -207,7 +207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &5294742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2491,7 +2491,27 @@ MonoBehaviour:
   PrismaticCellBonding: {fileID: 156180731}
   Celltocellinsulation: {fileID: 1413605031}
   ImmersionCooling: {fileID: 1171739770}
-  caseMat: {fileID: 2100000, guid: 21cfe82eafc466d41ab86ac63f50fc82, type: 2}
+  basicREd: {fileID: 2100000, guid: 463422d16ce5c684086cf287b73d03ca, type: 2}
+  blackAd: {fileID: 2100000, guid: 7e2265fda70ee3842910258b32cc1607, type: 2}
+  blackPlas: {fileID: 2100000, guid: 340d1db1f68c89c4996644dc334185c5, type: 2}
+  boxShapeBlack: {fileID: 2100000, guid: d5b4eb94c9d42ce42b6c7ea3346d32b2, type: 2}
+  boxShapeMetalic: {fileID: 2100000, guid: d579559f3c4a68c419ef0fe4cf3606e8, type: 2}
+  boxShapeRed: {fileID: 2100000, guid: f90866fcf0fd0a74295fb9556bdf6e55, type: 2}
+  boxShapeWhite: {fileID: 2100000, guid: 99b8adca73c393b449c5900e71b7d8fb, type: 2}
+  cutShader: {fileID: 2100000, guid: f0565452fcb2a6f49a9c4aabf395b71b, type: 2}
+  devider: {fileID: 2100000, guid: 847f25c3853bb2449a214f2bce039f3e, type: 2}
+  deviderSwerly: {fileID: 2100000, guid: 21cfe82eafc466d41ab86ac63f50fc82, type: 2}
+  dupontlogo: {fileID: 2100000, guid: c974b80c977164d42ad3628ebea90ade, type: 2}
+  genaricBlurry1: {fileID: 2100000, guid: 7fb9dafaeb57bfa4896c381a80ddc6ae, type: 2}
+  genaricBlurry: {fileID: 2100000, guid: 49783de8022805547a2929238770bae8, type: 2}
+  genaricfasteners: {fileID: 2100000, guid: 7777cacaeefe18c4e909228b877c0161, type: 2}
+  mint: {fileID: 2100000, guid: d54db426ca7e1e344adafac5dbfa5e0e, type: 2}
+  nomax: {fileID: 2100000, guid: 6c7e1a7fd94f3ff43855a4a48d1bb15c, type: 2}
+  orange: {fileID: 2100000, guid: f1647949f13f3c24d8559e2313d7a2df, type: 2}
+  outside: {fileID: 2100000, guid: ce4092843d64e6b46848d1497815b400, type: 2}
+  tesla: {fileID: 2100000, guid: 1e0ae0d2cf4d5be4e8eca45f6f42240c, type: 2}
+  whiteplastic: {fileID: 2100000, guid: 79ab3ce3a8c168743bdf2d7894a150fe, type: 2}
+  yellow: {fileID: 2100000, guid: 23b8d757fb1db0a43966557902cebcb8, type: 2}
   speed: 0.0009
   StopNextMotion: 0
 --- !u!65 &530673686
