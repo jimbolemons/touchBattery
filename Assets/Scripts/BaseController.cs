@@ -646,6 +646,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 3:
@@ -663,6 +811,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 4:
@@ -680,6 +976,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 5:
@@ -697,6 +1141,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 6:
@@ -714,6 +1306,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 7:
@@ -731,6 +1471,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 8:
@@ -748,6 +1636,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 9:
@@ -765,6 +1801,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 10:
@@ -782,6 +1966,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 11:
@@ -799,6 +2131,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 12:
@@ -816,6 +2296,154 @@ public class BaseController : MonoBehaviour {
              MoveTextUp(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 13:
@@ -833,6 +2461,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextUp(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
             case 14:
@@ -850,6 +2626,154 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextUp(ImmersionCooling,1000);
+             if (basicRedFloat<1){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1;
+                 } 
+
+                 if (blackAdFloat<1){                 
+                 blackAdFloat +=Time.deltaTime;
+                 }else{
+                     blackAdFloat = 1.1f;
+                 } 
+
+                 if (blackPlasFloat<1){                 
+                 blackPlasFloat +=Time.deltaTime;
+                 }else{
+                     blackPlasFloat = 1.1f;
+                 } 
+
+                 if (boxShapeBlackFloat<1){                 
+                 boxShapeBlackFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeBlackFloat = 1.1f;
+                 } 
+
+                 if (boxShapeMetalicFloat<1){                 
+                 boxShapeMetalicFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeMetalicFloat = 1.1f;
+                 } 
+
+                 if (boxShapeRedFloat<1){                 
+                 boxShapeRedFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeRedFloat = 1.1f;
+                 } 
+
+                 if (boxShapeWhiteFloat<1){                 
+                 boxShapeWhiteFloat +=Time.deltaTime;
+                 }else{
+                     boxShapeWhiteFloat = 1.1f;
+                 } 
+
+                 if (cutShaderFloat<1){                 
+                 cutShaderFloat +=Time.deltaTime;
+                 }else{
+                     cutShaderFloat = 1.1f;
+                 } 
+
+                 if (deviderFloat<1){                 
+                 deviderFloat +=Time.deltaTime;
+                 }else{
+                     deviderFloat = 1.1f;
+                 } 
+
+                 if (deviderSwerlyFloat<1){                 
+                 deviderSwerlyFloat +=Time.deltaTime;
+                 }else{
+                     deviderSwerlyFloat = 1.1f;
+                 } 
+
+                 if (dupontlogoFloat<1){                 
+                 dupontlogoFloat +=Time.deltaTime;
+                 }else{
+                     dupontlogoFloat = 1.1f;
+                 } 
+
+                 if (genaricBlurry1Float<1){                 
+                 genaricBlurry1Float +=Time.deltaTime;
+                 }else{
+                     genaricBlurry1Float = 1.1f;
+                 } 
+
+                 if (genaricBlurryFloat<1){                 
+                 genaricBlurryFloat +=Time.deltaTime;
+                 }else{
+                     genaricBlurryFloat = 1.1f;
+                 } 
+
+                 if (genaricfastenersFloat<1){                 
+                 genaricfastenersFloat +=Time.deltaTime;
+                 }else{
+                     genaricfastenersFloat = 1.1f;
+                 } 
+
+                 if (mintFloat<1){                 
+                 mintFloat +=Time.deltaTime;
+                 }else{
+                     mintFloat = 1.1f;
+                 } 
+
+                 if (nomaxFloat<1){                 
+                 nomaxFloat +=Time.deltaTime;
+                 }else{
+                     nomaxFloat = 1.1f;
+                 } 
+
+                 if (orangeFloat<1){                 
+                 orangeFloat +=Time.deltaTime;
+                 }else{
+                     orangeFloat = 1.1f;
+                 } 
+
+                 if (outsideFloat<1){                 
+                 outsideFloat +=Time.deltaTime;
+                 }else{
+                     outsideFloat = 1.1f;
+                 } 
+
+                 if (teslaFloat<1){                 
+                 teslaFloat +=Time.deltaTime;
+                 }else{
+                     teslaFloat = 1.1f;
+                 } 
+
+                 if (whiteplasticFloat<1){                 
+                 whiteplasticFloat +=Time.deltaTime;
+                 }else{
+                     whiteplasticFloat = 1.1f;
+                 } 
+
+                 if (yellowFloat<1){                 
+                 yellowFloat +=Time.deltaTime;
+                 }else{
+                     yellowFloat = 1.1f;
+                 } 
+                 
+                 
+                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
+                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
+                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
+                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
+                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
+                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
+                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
+                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
+                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
+                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
+                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
+                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
+                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
+                mint.SetFloat("Vector1_824EC8D0",mintFloat);
+                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
+                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
+                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
+                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
+                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
+                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
             break;
 
 
