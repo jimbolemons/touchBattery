@@ -47,6 +47,7 @@ public class BaseController : MonoBehaviour {
 
     public Vector2 startPos;
     public Vector2 direction;
+    public GameObject batteryModel;
 
    
  int state = 0;
@@ -94,27 +95,100 @@ public class BaseController : MonoBehaviour {
     public Material tesla;
     public Material whiteplastic;
     public Material yellow;
-     float basicREdFloat;
-     float blackAdFloat;
-     float blackPlasFloat;
-     float boxShapeBlackFloat;
-     float boxShapeMetalicFloat;
-     float boxShapeRedFloat;
-     float boxShapeWhiteFloat;
-     float cutShaderFloat;
-     float deviderFloat;
-     float deviderSwerlyFloat;
-     float dupontlogoFloat;
-     float genaricBlurry1Float;
-     float genaricBlurryFloat;
-     float genaricfastenersFloat;
-     float mintFloat;
-     float nomaxFloat;
-     float orangeFloat;
-     float outsideFloat;
-     float teslaFloat;
-     float whiteplasticFloat;
-     float yellowFloat;
+    public Material metal1;
+    public Material ruber2;
+    public Material metal3;
+    public Material plastic4;
+    public Material plastic5;
+    public Material metal7;
+    public Material plastic7;
+    public Material wplastic7;
+    public Material metal8;
+    public Material plastic8;
+    public Material black9;
+    public Material red9;
+    public Material white9;
+    public Material metal9;
+    public Material plastic9;
+    public Material metal10;
+    public Material plastic10;
+    public Material wplastic10;
+    public Material black11;
+    public Material white11;
+    public Material red11;
+    public Material metal11;
+    public Material plastic11;
+    public Material black12;
+    public Material white12;
+    public Material red12;
+    public Material metal12;
+    public Material plastic12;
+    public Material black13;
+    public Material white13;
+    public Material red13;
+    public Material plastic13;
+    public Material metal13;
+    public Material metal14;
+    public Material plastic14;
+    float basicREdFloat;
+    float blackAdFloat;
+    float blackPlasFloat;
+    float boxShapeBlackFloat;
+    float boxShapeMetalicFloat;
+    float boxShapeRedFloat;
+    float boxShapeWhiteFloat;
+    float cutShaderFloat;
+    float deviderFloat;
+    float deviderSwerlyFloat;
+    float dupontlogoFloat;
+    float genaricBlurry1Float;
+    float genaricBlurryFloat;
+    float genaricfastenersFloat;
+    float mintFloat;
+    float nomaxFloat;
+    float orangeFloat;
+    float outsideFloat;
+    float teslaFloat;
+    float whiteplasticFloat;
+    float yellowFloat;
+    float metal1Float;
+    float ruber2Float;
+    float metal3Float;
+    float plastic4Float;
+    float plastic5Float;
+    float metal7Float;
+    float plastic7Float;
+    float wplastic7Float;
+    float metal8Float;
+    float plastic8Float;
+    float black9Float;
+    float red9Float;
+    float white9Float;
+    float metal9Float;
+    float plastic9Float;
+    float metal10Float;
+    float plastic10Float;
+    float wplastic10Float;
+    float black11Float;
+    float white11Float;
+    float red11Float;
+    float metal11Float;
+    float plastic11Float;
+    float black12Float;
+    float white12Float;
+    float red12Float;
+    float metal12Float;
+    float plastic12Float;
+    float black13Float;
+    float white13Float;
+    float red13Float;
+    float plastic13Float;
+    float metal13Float;
+    float metal14Float;
+    float plastic14Float;
+
+    bool switchZoom = false;
+
 
 
     
@@ -309,132 +383,76 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
+                  {
+                      switchZoom = false;
+                  }
+             }
                  if (basicRedFloat>0){
                  basicRedFloat -=Time.deltaTime;                 
                  }else{
                      basicRedFloat = 0;
                  }
 
-                  if (blackAdFloat>0){
-                 blackAdFloat -=Time.deltaTime;                 
-                 }else{
-                     blackAdFloat = 0;
-                 }
-
-                  if (blackPlasFloat>0){
-                 blackPlasFloat -=Time.deltaTime;                 
-                 }else{
-                     blackPlasFloat = 0;
-                 }
-
-                  if (boxShapeBlackFloat>0){
-                 boxShapeBlackFloat -=Time.deltaTime;                 
-                 }else{
-                     boxShapeBlackFloat = 0;
-                 }
-
-                  if (boxShapeMetalicFloat>0){
-                 boxShapeMetalicFloat -=Time.deltaTime;                 
-                 }else{
-                     boxShapeMetalicFloat = 0;
-                 }
-
-                  if (boxShapeRedFloat>0){
-                 boxShapeRedFloat -=Time.deltaTime;                 
-                 }else{
-                     boxShapeRedFloat = 0;
-                 }
-
-                  if (boxShapeWhiteFloat>0){
-                 boxShapeWhiteFloat -=Time.deltaTime;                 
-                 }else{
-                     boxShapeWhiteFloat = 0;
-                 }
-
-                  if (cutShaderFloat>0){
-                 cutShaderFloat -=Time.deltaTime;                 
-                 }else{
-                     cutShaderFloat = 0;
-                 }
-
-                  if (deviderFloat>0){
-                 deviderFloat -=Time.deltaTime;                 
-                 }else{
-                     deviderFloat = 0;
-                 }
-
-                  if (deviderSwerlyFloat>0){
-                 deviderSwerlyFloat -=Time.deltaTime;                 
-                 }else{
-                     deviderSwerlyFloat = 0;
-                 }
-
-                  if (dupontlogoFloat>0){
-                 dupontlogoFloat -=Time.deltaTime;                 
-                 }else{
-                     dupontlogoFloat = 0;
-                 }
-
-                  if (genaricBlurry1Float>0){
-                 genaricBlurry1Float -=Time.deltaTime;                 
-                 }else{
-                     genaricBlurry1Float = 0;
-                 }
-
-                  if (genaricBlurryFloat>0){
-                 genaricBlurryFloat -=Time.deltaTime;                 
-                 }else{
-                     genaricBlurryFloat = 0;
-                 }
-
-                  if (genaricfastenersFloat>0){
-                 genaricfastenersFloat -=Time.deltaTime;                 
-                 }else{
-                     genaricfastenersFloat = 0;
-                 }
-
-                  if (mintFloat>0){
-                 mintFloat -=Time.deltaTime;                 
-                 }else{
-                     mintFloat = 0;
-                 }
-
-                  if (nomaxFloat>0){
-                 nomaxFloat -=Time.deltaTime;                 
-                 }else{
-                     nomaxFloat = 0;
-                 }
-                 
-                  if (orangeFloat>0){
-                 orangeFloat -=Time.deltaTime;                 
-                 }else{
-                     orangeFloat = 0;
-                 }
-
-                  if (outsideFloat>0){
-                 outsideFloat -=Time.deltaTime;                 
-                 }else{
-                     outsideFloat = 0;
-                 }
-
-                  if (teslaFloat>0){
-                 teslaFloat -=Time.deltaTime;                 
-                 }else{
-                     teslaFloat = 0;
-                 }
-
-                  if (whiteplasticFloat>0){
-                 whiteplasticFloat -=Time.deltaTime;                 
-                 }else{
-                     whiteplasticFloat = 0;
-                 }
-
-                  if (yellowFloat>0){
-                 yellowFloat -=Time.deltaTime;                 
-                 }else{
-                     yellowFloat = 0;
-                 }
+                
+                blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -457,6 +475,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
 
 
                  
@@ -481,131 +534,82 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);   
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
+                  {
+                      switchZoom = false;
+                  }
+             }
+            if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
+            if (metal1Float>0)
+             {
+                 metal1Float -= Time.deltaTime;
+             }else{
+                 metal1Float = 0;
+             }
 
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
+                blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                //metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
@@ -629,6 +633,42 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+
             break;
 
             case 2:
@@ -646,132 +686,81 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
+                 if (ruber2Float>0)
+             {
+                 ruber2Float -= Time.deltaTime;
+             }else{
+                 ruber2Float = 0;
+             }
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
-
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                 blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                //ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -794,6 +783,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 3:
@@ -811,132 +835,93 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1.41f,0,-2.7f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
-
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                  if (metal3Float>0)
+             {
+                 metal3Float -= Time.deltaTime;
+             }else{
+                 metal3Float = 0;
+             }
+              if (orangeFloat>0)
+             {
+                 orangeFloat -= Time.deltaTime;
+             }else{
+                 orangeFloat = 0;
+             }
+              if (yellowFloat>0)
+             {
+                 yellowFloat -= Time.deltaTime;
+             }else{
+                 yellowFloat = 0;
+             }
+                blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                //orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+               // yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+               // metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -959,6 +944,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 4:
@@ -976,132 +996,81 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(.915f,0,-2.72f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
+                  if (plastic4Float>0)
+             {
+                 plastic4Float -= Time.deltaTime;
+             }else{
+                 plastic4Float = 0;
+             }
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
-
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                 blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                //plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -1124,6 +1093,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 5:
@@ -1141,132 +1145,83 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(0,0,-2.75f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
+                  
+               if (plastic5Float>0)
+             {
+                 plastic5Float -= Time.deltaTime;
+             }else{
+                 plastic5Float = 0;
+             }
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
 
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                //plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -1289,6 +1244,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 6:
@@ -1306,132 +1296,88 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
+             if (dupontlogoFloat>0)
+             {
+                 dupontlogoFloat -= Time.deltaTime;
+             }else{
+                 dupontlogoFloat = 0;
+             }
+            if (outsideFloat>0)
+             {
+                 outsideFloat -= Time.deltaTime;
+             }else{
+                 outsideFloat = 0;
+             }
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
 
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                 blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+               // dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+               // outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -1454,6 +1400,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 7:
@@ -1471,132 +1452,93 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,1.47f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
+                  if (metal7Float>0)
+             {
+                 metal7Float -= Time.deltaTime;
+             }else{
+                 metal7Float = 0;
+             }
+              if (plastic7Float>0)
+             {
+                 plastic7Float -= Time.deltaTime;
+             }else{
+                 plastic7Float = 0;
+             }
+              if (wplastic7Float>0)
+             {
+                 wplastic7Float -= Time.deltaTime;
+             }else{
+                 wplastic7Float = 0;
+             }
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
-
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+               // metal7Float = basicRedFloat;
+               // plastic7Float = basicRedFloat;
+               // wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -1619,6 +1561,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 8:
@@ -1636,132 +1613,87 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(-1,0,-1.1f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
+                  if (metal8Float>0)
+             {
+                 metal8Float -= Time.deltaTime;
+             }else{
+                 metal8Float = 0;
+             }
+              if (plastic8Float>0)
+             {
+                 plastic8Float -= Time.deltaTime;
+             }else{
+                 plastic8Float = 0;
+             }
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
-
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+               // metal8Float = basicRedFloat;
+               // plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -1784,6 +1716,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 9:
@@ -1801,132 +1768,112 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(-1,0,1.12f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
+                 if (black9Float>0)
+             {
+                 black9Float -= Time.deltaTime;
+             }else{
+                 black9Float = 0;
+             }
+             if (metal9Float>0)
+             {
+                 metal9Float -= Time.deltaTime;
+             }else{
+                 metal9Float = 0;
+             }
+             if (plastic9Float>0)
+             {
+                 plastic9Float -= Time.deltaTime;
+             }else{
+                 plastic9Float = 0;
+             }
+             if (red9Float>0)
+             {
+                 red9Float -= Time.deltaTime;
+             }else{
+                 red9Float = 0;
+             }
+             if (white9Float>0)
+             {
+                 white9Float -= Time.deltaTime;
+             }else{
+                 white9Float = 0;
+             }
+             if (mintFloat>0)
+             {
+                 mintFloat -= Time.deltaTime;
+             }else{
+                 mintFloat = 0;
+             }
 
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                //mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+               // black9Float = basicRedFloat;
+               // red9Float = basicRedFloat;
+               // white9Float = basicRedFloat;
+                //metal9Float = basicRedFloat;
+               // plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -1949,6 +1896,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 10:
@@ -1966,132 +1948,101 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,-1.5f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
+                 if (metal10Float>0)
+             {
+                 metal10Float -= Time.deltaTime;
+             }else{
+                 metal10Float = 0;
+             }
+                if (plastic10Float>0)
+             {
+                 plastic10Float -= Time.deltaTime;
+             }else{
+                 plastic10Float = 0;
+             }
+                if (wplastic10Float>0)
+             {
+                 wplastic10Float -= Time.deltaTime;
+             }else{
+                 wplastic10Float = 0;
+             }
+                if (teslaFloat>0)
+             {
+                 teslaFloat -= Time.deltaTime;
+             }else{
+                 teslaFloat = 0;
+             }
 
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
 
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                 blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                //teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                //metal10Float = basicRedFloat;
+                //plastic10Float = basicRedFloat;
+                //wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -2114,6 +2065,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 11:
@@ -2131,132 +2117,105 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,-.77f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
+                   if (black11Float>0)
+             {
+                 black11Float -= Time.deltaTime;
+             }else{
+                 black11Float = 0;
+             }
+               if (metal11Float>0)
+             {
+                 metal11Float -= Time.deltaTime;
+             }else{
+                 metal11Float = 0;
+             }
+               if (plastic11Float>0)
+             {
+                 plastic11Float -= Time.deltaTime;
+             }else{
+                 plastic11Float = 0;
+             }
+               if (red11Float>0)
+             {
+                 red11Float -= Time.deltaTime;
+             }else{
+                 red11Float = 0;
+             }
+               if (white11Float>0)
+             {
+                 white11Float -= Time.deltaTime;
+             }else{
+                 white11Float = 0;
+             }
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
-
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                 blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+               // black11Float = basicRedFloat;
+               // white11Float = basicRedFloat;
+               // red11Float = basicRedFloat;
+               // metal11Float = basicRedFloat;
+               // plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -2279,6 +2238,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 12:
@@ -2296,132 +2290,105 @@ public class BaseController : MonoBehaviour {
              MoveTextUp(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,0f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
+                   if (black12Float>0)
+             {
+                 black12Float -= Time.deltaTime;
+             }else{
+                 black12Float = 0;
+             }
+               if (metal12Float>0)
+             {
+                 metal12Float -= Time.deltaTime;
+             }else{
+                 metal12Float = 0;
+             }
+               if (plastic12Float>0)
+             {
+                 plastic12Float -= Time.deltaTime;
+             }else{
+                 plastic12Float = 0;
+             }
+               if (red12Float>0)
+             {
+                 red12Float -= Time.deltaTime;
+             }else{
+                 red12Float = 0;
+             }
+               if (white12Float>0)
+             {
+                 white12Float -= Time.deltaTime;
+             }else{
+                 white12Float = 0;
+             }
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
-
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                 blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+               // black12Float = basicRedFloat;
+               // white12Float = basicRedFloat;
+               // red12Float = basicRedFloat;
+               // metal12Float = basicRedFloat;
+               //plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -2444,6 +2411,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 13:
@@ -2461,132 +2463,111 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextUp(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,.75f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
+                      if (black13Float>0)
+             {
+                 black13Float -= Time.deltaTime;
+             }else{
+                 black13Float = 0;
+             }
+               if (metal13Float>0)
+             {
+                 metal13Float -= Time.deltaTime;
+             }else{
+                 metal13Float = 0;
+             }
+               if (plastic13Float>0)
+             {
+                 plastic13Float -= Time.deltaTime;
+             }else{
+                 plastic13Float = 0;
+             }
+               if (red13Float>0)
+             {
+                 red13Float -= Time.deltaTime;
+             }else{
+                 red13Float = 0;
+             }
+               if (white13Float>0)
+             {
+                 white13Float -= Time.deltaTime;
+             }else{
+                 white13Float = 0;
+             }
+                 if (nomaxFloat>0)
+             {
+                 nomaxFloat -= Time.deltaTime;
+             }else{
+                 nomaxFloat = 0;
+             }
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
-
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                //nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                //black13Float = basicRedFloat;
+                //white13Float = basicRedFloat;
+                //red13Float = basicRedFloat;
+                //plastic13Float = basicRedFloat;
+                //metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -2609,6 +2590,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
             case 14:
@@ -2626,132 +2642,88 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextUp(ImmersionCooling,1000);
-             if (basicRedFloat<1){                 
+             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,2.25f),5 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  {
+                      switchZoom = false;
+                  }
+             }
+
+             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
-                     basicRedFloat = 1;
+                     basicRedFloat = 1.1f;
                  } 
+                  if (metal14Float>0)
+             {
+                 metal14Float -= Time.deltaTime;
+             }else{
+                 metal14Float = 0;
+             }
+               if (plastic14Float>0)
+             {
+                 plastic14Float -= Time.deltaTime;
+             }else{
+                 plastic14Float = 0;
+             }
 
-                 if (blackAdFloat<1){                 
-                 blackAdFloat +=Time.deltaTime;
-                 }else{
-                     blackAdFloat = 1.1f;
-                 } 
-
-                 if (blackPlasFloat<1){                 
-                 blackPlasFloat +=Time.deltaTime;
-                 }else{
-                     blackPlasFloat = 1.1f;
-                 } 
-
-                 if (boxShapeBlackFloat<1){                 
-                 boxShapeBlackFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeBlackFloat = 1.1f;
-                 } 
-
-                 if (boxShapeMetalicFloat<1){                 
-                 boxShapeMetalicFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeMetalicFloat = 1.1f;
-                 } 
-
-                 if (boxShapeRedFloat<1){                 
-                 boxShapeRedFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeRedFloat = 1.1f;
-                 } 
-
-                 if (boxShapeWhiteFloat<1){                 
-                 boxShapeWhiteFloat +=Time.deltaTime;
-                 }else{
-                     boxShapeWhiteFloat = 1.1f;
-                 } 
-
-                 if (cutShaderFloat<1){                 
-                 cutShaderFloat +=Time.deltaTime;
-                 }else{
-                     cutShaderFloat = 1.1f;
-                 } 
-
-                 if (deviderFloat<1){                 
-                 deviderFloat +=Time.deltaTime;
-                 }else{
-                     deviderFloat = 1.1f;
-                 } 
-
-                 if (deviderSwerlyFloat<1){                 
-                 deviderSwerlyFloat +=Time.deltaTime;
-                 }else{
-                     deviderSwerlyFloat = 1.1f;
-                 } 
-
-                 if (dupontlogoFloat<1){                 
-                 dupontlogoFloat +=Time.deltaTime;
-                 }else{
-                     dupontlogoFloat = 1.1f;
-                 } 
-
-                 if (genaricBlurry1Float<1){                 
-                 genaricBlurry1Float +=Time.deltaTime;
-                 }else{
-                     genaricBlurry1Float = 1.1f;
-                 } 
-
-                 if (genaricBlurryFloat<1){                 
-                 genaricBlurryFloat +=Time.deltaTime;
-                 }else{
-                     genaricBlurryFloat = 1.1f;
-                 } 
-
-                 if (genaricfastenersFloat<1){                 
-                 genaricfastenersFloat +=Time.deltaTime;
-                 }else{
-                     genaricfastenersFloat = 1.1f;
-                 } 
-
-                 if (mintFloat<1){                 
-                 mintFloat +=Time.deltaTime;
-                 }else{
-                     mintFloat = 1.1f;
-                 } 
-
-                 if (nomaxFloat<1){                 
-                 nomaxFloat +=Time.deltaTime;
-                 }else{
-                     nomaxFloat = 1.1f;
-                 } 
-
-                 if (orangeFloat<1){                 
-                 orangeFloat +=Time.deltaTime;
-                 }else{
-                     orangeFloat = 1.1f;
-                 } 
-
-                 if (outsideFloat<1){                 
-                 outsideFloat +=Time.deltaTime;
-                 }else{
-                     outsideFloat = 1.1f;
-                 } 
-
-                 if (teslaFloat<1){                 
-                 teslaFloat +=Time.deltaTime;
-                 }else{
-                     teslaFloat = 1.1f;
-                 } 
-
-                 if (whiteplasticFloat<1){                 
-                 whiteplasticFloat +=Time.deltaTime;
-                 }else{
-                     whiteplasticFloat = 1.1f;
-                 } 
-
-                 if (yellowFloat<1){                 
-                 yellowFloat +=Time.deltaTime;
-                 }else{
-                     yellowFloat = 1.1f;
-                 } 
-                 
+                 blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+               // metal14Float = basicRedFloat;
+                //plastic14Float = basicRedFloat;
                  
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
@@ -2774,6 +2746,41 @@ public class BaseController : MonoBehaviour {
                 tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
                 whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
                 yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
+                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
+                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
+                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
+                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
+                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
+                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
+                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
+                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
+                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
+                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
+                black9.SetFloat("Vector1_824EC8D0",black9Float);
+                red9.SetFloat("Vector1_824EC8D0",red9Float);
+                white9.SetFloat("Vector1_824EC8D0",white9Float);
+                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
+                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
+                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
+                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
+                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
+                black11.SetFloat("Vector1_824EC8D0",black11Float);
+                white11.SetFloat("Vector1_824EC8D0",white11Float);
+                red11.SetFloat("Vector1_824EC8D0",red11Float);
+                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
+                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
+                black12.SetFloat("Vector1_824EC8D0",black12Float);
+                white12.SetFloat("Vector1_824EC8D0",white12Float);
+                red12.SetFloat("Vector1_824EC8D0",red12Float);
+                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
+                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
+                black13.SetFloat("Vector1_824EC8D0",black13Float);
+                white13.SetFloat("Vector1_824EC8D0",white13Float);
+                red13.SetFloat("Vector1_824EC8D0",red13Float);
+                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
+                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
+                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
             break;
 
 
@@ -2836,86 +2843,162 @@ public class BaseController : MonoBehaviour {
                              if(hitTag == "background" && hitEnd.collider.tag == "background")
                             {
                                 state = 0;  
-                                 //todo fade everything in                            
+                                switchZoom = true;
+                                                        
                             } 
         }
-                            if (hitTag == "Betamate Adhesive Bonding" && hitEnd.collider.tag == hitTag)
+                            if (hitTag == "Betamate Adhesive Bonding" && hitEnd.collider.tag == hitTag  )
                             {
-                              state = 1;
-                              //todo fade everything but this
+                                if (state == 0){
+                                    state = 1;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                             
                             }
-                            if (hitTag == "Cover Sealing" && hitEnd.collider.tag == hitTag)
+                           
+
+                            if (hitTag == "Cover Sealing" && hitEnd.collider.tag == hitTag  )
                             {
-                               state = 2;
-                                //todo fade everything but this
+                               if (state == 0){
+                                    state = 2;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                              
                             }
                             if (hitTag == "HV Connector System" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 3;
-                                //todo fade everything but this
+                               if (state == 0){
+                                    state = 3;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
                              if (hitTag == "LV Connector" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 4;
-                                //todo fade everything but this
+                              if (state == 0){
+                                    state = 4;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
                              if (hitTag == "Fluid Connectors" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 5;
-                                //todo fade everything but this
+                               if (state == 0){
+                                    state = 5;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                                
                             }
-                             if (hitTag == "Structural bonding" && hitEnd.collider.tag == hitTag)
+                             if (hitTag == "Structural Bonding" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 6;
-                                //todo fade everything but this
+                              if (state == 0){
+                                    state = 6;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
 
                             if (hitTag == "Module End Plates" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 7;
-                                //todo fade everything but this
+                               if (state == 0){
+                                    state = 7;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
 
                             if (hitTag == "Innovative Design for Hybrid Cooling Plate" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 8;
-                                //todo fade everything but this
+                               if (state == 0){
+                                    state = 8;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
 
                             if (hitTag == "Thermal Conductive Interface" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 9;
-                                //todo fade everything but this
+                               if (state == 0){
+                                    state = 9;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
 
                             if (hitTag == "Plastic Cell Holders" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 10;
-                                //todo fade everything but this
+                               if (state == 0){
+                                    state = 10;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
 
                             if (hitTag == "Battery Cell to Pack Structural Bonding" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 11;
-                                //todo fade everything but this
+                              if (state == 0){
+                                    state = 11;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
 
                             if (hitTag == "Prismatic Cell Bonding" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 12;
-                                //todo fade everything but this
+                               if (state == 0){
+                                    state = 12;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
 
                             if (hitTag == "Cell to cell insulation" && hitEnd.collider.tag == hitTag)
                             {
-                               state = 13;
-                                //todo fade everything but this
+                               if (state == 0){
+                                    state = 13;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
 
-                            if (hitTag == "Immersion Cooling" && hitEnd.collider.tag == hitTag)
+                            if (hitTag == "Immersion Cooling" && hitEnd.collider.tag == hitTag )
                             {
-                               state = 14;
-                                //todo fade everything but this
+                               if (state == 0){
+                                    state = 14;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
                             }
 
 

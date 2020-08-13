@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mint Green Adhesive
+  m_Name: YellowMattePlastic
   m_Shader: {fileID: -6465566751694194690, guid: ceeb3315e5e58654db499e27ffba4c60,
     type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON _GRADIENT_ON _SHOWBACKSIDE_ON
@@ -69,11 +69,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_824EC8D0: 0
+    - Vector1_824EC8D0: 1.1
     - Vector1_89A2DDEE: 0.554
     - Vector1_EDB1AFD5: 0.508
     - _BumpScale: 1
-    - _ColorMask: 15
     - _ColorOffset: 0.5
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -81,42 +80,35 @@ Material:
     - _Emission: 0
     - _Fade: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.501
+    - _Glossiness: 0.156
     - _GlossyReflections: 1
     - _GradiantWidth: 40
     - _Gradient: 1
     - _HighlightActive: 0
     - _HighlightAmount: 0
     - _MaxTransparacy: 1
-    - _Metallic: 0.52
+    - _Metallic: 0.491
     - _Mode: 2
     - _NormScale: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _ShowBackSide: 1
     - _SmoothnessTextureChannel: 0
-    - _SpecScale: 0.299
+    - _SpecScale: 0.103
     - _SpecularHighlights: 1
     - _Split: 0
     - _SrcBlend: 5
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
     - _UVSec: 0
-    - _UseUIAlphaClip: 0
     - _ZWrite: 0
     m_Colors:
-    - Color_2AA0D5D4: {r: 0.5990566, g: 1, b: 0.89244103, a: 0}
-    - _Color: {r: 0.2784314, g: 0.7254902, b: 0.6156863, a: 1}
-    - _ColorA: {r: 0.2784314, g: 0.7254902, b: 0.6156863, a: 1}
+    - Color_2AA0D5D4: {r: 0.8962264, g: 0.7004514, b: 0.080322154, a: 0}
+    - _Color: {r: 0.7176471, g: 0.33333334, b: 0.04705883, a: 1}
+    - _ColorA: {r: 1, g: 1, b: 1, a: 1}
     - _ColorB: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorC: {r: 0.48584908, g: 1, b: 0.8737173, a: 1}
+    - _ColorC: {r: 0.8207547, g: 0.67887104, b: 0.40650585, a: 1}
     - _ColorD: {r: 1, g: 1, b: 1, a: 1}
     - _ColorE: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _PlaneNormal: {r: 0, g: 1, b: 0, a: 0}
     - _PlanePosition: {r: 0, g: 0, b: 0, a: 1}
-    - _Specular: {r: 0, g: 0, b: 0, a: 0}
