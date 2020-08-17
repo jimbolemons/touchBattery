@@ -64,6 +64,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4503DF17_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -101,7 +105,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - Color_2AA0D5D4: {r: 0.7924528, g: 0.7251179, b: 0.51957995, a: 0}
+    - Color_2AA0D5D4: {r: 0.745283, g: 0.72735405, b: 0.6714578, a: 0}
     - _Color: {r: 0.6745098, g: 0.64705884, b: 0.5058824, a: 1}
     - _ColorA: {r: 1, g: 1, b: 1, a: 1}
     - _ColorB: {r: 1, g: 1, b: 1, a: 1}
