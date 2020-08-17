@@ -2794,6 +2794,176 @@ blackAdFloat = basicRedFloat;
         {
             Application.Quit();
         }
+         
+         
+         if ( Input.GetMouseButtonDown (0))
+         { 
+             RaycastHit hit2; 
+             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
+             if ( Physics.Raycast (ray,out hit2,100.0f))
+              {
+                            if(hit2.collider.tag == "background")
+                            {
+                                state = 0;  
+                                switchZoom = true;
+                                                        
+                            } 
+                            if (hit2.collider.tag == "Betamate Adhesive Bonding"  )
+                            {
+                                if (state == 0){
+                                    state = 1;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                             
+                            }
+                           
+
+                            if (hit2.collider.tag == "Cover Sealing"  )
+                            {
+                               if (state == 0){
+                                    state = 2;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                              
+                            }
+                            if (hit2.collider.tag == "HV Connector System" )
+                            {
+                               if (state == 0){
+                                    state = 3;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+                             if (hit2.collider.tag == "LV Connector"  )
+                            {
+                              if (state == 0){
+                                    state = 4;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+                             if (hit2.collider.tag == "Fluid Connectors" )
+                            {
+                               if (state == 0){
+                                    state = 5;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                                
+                            }
+                             if (hit2.collider.tag == "Structural Bonding" )
+                            {
+                              if (state == 0){
+                                    state = 6;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hit2.collider.tag == "Module End Plates"  )
+                            {
+                               if (state == 0){
+                                    state = 7;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hit2.collider.tag == "Innovative Design for Hybrid Cooling Plate"  )
+                            {
+                               if (state == 0){
+                                    state = 8;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hit2.collider.tag == "Thermal Conductive Interface"  )
+                            {
+                               if (state == 0){
+                                    state = 9;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hit2.collider.tag == "Plastic Cell Holders"  )
+                            {
+                               if (state == 0){
+                                    state = 10;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hit2.collider.tag == "Battery Cell to Pack Structural Bonding"  )
+                            {
+                              if (state == 0){
+                                    state = 11;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hit2.collider.tag == "Prismatic Cell Bonding"  )
+                            {
+                               if (state == 0){
+                                    state = 12;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hit2.collider.tag == "Cell to cell insulation" )
+                            {
+                               if (state == 0){
+                                    state = 13;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hit2.collider.tag == "Immersion Cooling"   )
+                            {
+                               if (state == 0){
+                                    state = 14;
+                              switchZoom = true;
+                                }else{
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+   }
+ }
         if (Input.touchCount > 0 && canSpin && !StopNextMotion)//Real Touch Inputs
         {
              Touch touch = Input.GetTouch(0);
