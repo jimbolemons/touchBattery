@@ -2940,7 +2940,7 @@ blackAdFloat = basicRedFloat;
                                 }
                             }
 
-                            if (hit2.collider.tag == "Cell to cell insulation" )
+                            if (hit2.collider.tag == "Cell to Cell Insulation" )
                             {
                                if (state == 0){
                                     state = 13;
