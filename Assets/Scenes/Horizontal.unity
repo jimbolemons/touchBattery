@@ -1537,6 +1537,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262955392}
   m_CullTransparentMesh: 0
+--- !u!1 &276043053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1260349186916986002, guid: 2c796d43517fcd045b8ba54b9e970f1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1355970597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &276043054
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276043053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8885895614622737870, guid: 2c796d43517fcd045b8ba54b9e970f1b, type: 3}
 --- !u!1 &278185481
 GameObject:
   m_ObjectHideFlags: 0
@@ -6953,6 +6973,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a0e63f1e8cc2edc4f804af4c54ef1e54, type: 2}
+    - target: {fileID: 1260349186916986002, guid: 2c796d43517fcd045b8ba54b9e970f1b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Structural Bonding
+      objectReference: {fileID: 0}
     - target: {fileID: 1454413701137046904, guid: 2c796d43517fcd045b8ba54b9e970f1b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

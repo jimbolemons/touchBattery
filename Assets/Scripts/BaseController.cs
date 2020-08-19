@@ -189,6 +189,8 @@ public class BaseController : MonoBehaviour {
 
     bool switchZoom = false;
 
+ float minFloat = -3;
+ float maxFloat = -10;
 
 
     
@@ -244,18 +246,18 @@ public class BaseController : MonoBehaviour {
     void UpdateZoom(float ChangeInMag)
     {
         Cam.transform.localPosition += new Vector3(0, 0, ChangeInMag/200f);
-    
+       
         
         //Clamp
         Vector3 pos = Cam.transform.localPosition;
-        pos.z = Mathf.Clamp(pos.z, -15, -3);
+        pos.z = Mathf.Clamp(pos.z, maxFloat, minFloat);
          float y = .5f *((pos.z+3)/-12);
 
-        pos.y = Mathf.Clamp(y,0,.5f);
+       // pos.y = Mathf.Clamp(y,0,.5f);
 
         Cam.transform.localPosition = pos;
     }
-    void UpdateZoomMouse(float ChangeInMag)
+    /*void UpdateZoomMouse(float ChangeInMag)
     {
         Cam.transform.localPosition += new Vector3(0, 0, ChangeInMag*5f);
 
@@ -268,6 +270,7 @@ public class BaseController : MonoBehaviour {
         pos.y = Mathf.Clamp(y,0,.5f);
         Cam.transform.localPosition = pos;
     }
+    */
     void HandleDuelInput(float Magnitude)
     {
         Debug.Log(pastMagnitude);
@@ -301,13 +304,7 @@ public class BaseController : MonoBehaviour {
         
 
 
-    }
-    void CheckMoveup(bool up, RectTransform d )
-    {
-       
-            
-    }
-    
+    }   
     
 
    	Vector2 pDelta = Vector2.zero;
@@ -334,41 +331,14 @@ public class BaseController : MonoBehaviour {
            CamParent.transform.Translate(0, 3 * Time.deltaTime,0);
         }
 
-        /*
-
-        if (moveDown && data2.anchoredPosition.y >= bottomMarker.position.y)
-        {
-            MoveTextDown(data2,1000);
-            if(data2.anchoredPosition.y <= bottomMarker.position.y)
-           moveDown = false;
-
-        }
-         if (moveUp && data2.anchoredPosition.y <= Vector3.zero.y)
-        {
-            MoveTextUp(data2,1000);
-            if(data2.anchoredPosition.y >= Vector3.zero.y)
-           moveUp = false;
-
-        }
-         if (moveDownBat && dataBat.anchoredPosition.y >= bottomMarker.position.y)
-        {
-            MoveTextDown(dataBat,1000);
-            if(dataBat.anchoredPosition.y <= bottomMarker.position.y)
-           moveDownBat = false;
-
-        }
-         if (moveUpBat && dataBat.anchoredPosition.y <= Vector3.zero.y)
-        {
-            MoveTextUp(dataBat,1000);
-            if(dataBat.anchoredPosition.y >= Vector3.zero.y)
-           moveUpBat = false;
-
-        }
-        */
+      
 
         switch(state)
         {
+            
             case 0:
+            minFloat = -5f;
+            maxFloat = -10f;
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -383,9 +353,13 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,Vector3.zero,2 *Time.deltaTime);
+            // batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2.8f*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
+                 // Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),12.8f*Time.deltaTime);
+                 // CamParent.transform.position = Vector3.MoveTowards(CamParent.transform.position,Vector3.zero,5*Time.deltaTime);
                   if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
                   {
                       switchZoom = false;
@@ -454,62 +428,7 @@ public class BaseController : MonoBehaviour {
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+               
 
 
                  
@@ -520,6 +439,8 @@ public class BaseController : MonoBehaviour {
             break;
 
             case 1:
+            minFloat = -5f;
+            maxFloat = -10f;
             MoveTextUp(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -534,9 +455,12 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);   
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,Vector3.zero,2 *Time.deltaTime);
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
+                  //Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),12.8f*Time.deltaTime);
+                  //CamParent.transform.position = Vector3.MoveTowards(CamParent.transform.position,Vector3.zero,5*Time.deltaTime);
                   if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
                   {
                       switchZoom = false;
@@ -612,66 +536,13 @@ public class BaseController : MonoBehaviour {
                 plastic14Float = basicRedFloat;
                  
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+                
 
             break;
 
             case 2:
+            minFloat = -5f;
+            maxFloat = -10f;
             MoveTextDown(Adhesivebonding,1000);
             MoveTextUp(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -686,9 +557,10 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,Vector3.zero,2 *Time.deltaTime);
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
                   {
                       switchZoom = false;
@@ -762,65 +634,12 @@ public class BaseController : MonoBehaviour {
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+                
             break;
 
             case 3:
+            minFloat = -1f;
+            maxFloat = -3f;
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextUp(HVconnectorsystem,1000);
@@ -835,10 +654,16 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1.41f,0,-2.7f),5 *Time.deltaTime);
+            // batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1.41f,0,-2.7f),10 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1.41f,0,-2.7f),4*Time.deltaTime);
+             //batteryModel.transform.localPosition = new Vector3(1.41f,0,-2.7f);
+             
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
-                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  //Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-1),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-1),2*Time.deltaTime);
+                  //CamParent.transform.position = Vector3.MoveTowards(CamParent.transform.position,Vector3.zero,10*Time.deltaTime);
+                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -1.5 && Cam.transform.localPosition.z < -1)
                   {
                       switchZoom = false;
                   }
@@ -923,65 +748,12 @@ public class BaseController : MonoBehaviour {
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+               
             break;
 
             case 4:
+            minFloat = -1f;
+            maxFloat = -3f;
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -996,10 +768,11 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(.915f,0,-2.72f),5 *Time.deltaTime);
-             if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
-                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(.915f,0,-2.72f),2 *Time.deltaTime);
+              if (switchZoom){
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-1),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -1.5 && Cam.transform.localPosition.z < -1)
                   {
                       switchZoom = false;
                   }
@@ -1072,65 +845,12 @@ public class BaseController : MonoBehaviour {
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+              
             break;
 
             case 5:
+            minFloat = -1f;
+            maxFloat = -3f;
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -1145,10 +865,12 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(0,0,-2.75f),5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(0,0,-2.75f),2 *Time.deltaTime);
+            
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
-                  if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-1),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
+                  if (Cam.transform.localPosition.z > -1.5 && Cam.transform.localPosition.z < -1)
                   {
                       switchZoom = false;
                   }
@@ -1223,65 +945,12 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+                
             break;
 
             case 6:
+            minFloat = -5f;
+            maxFloat = -10f;
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -1296,9 +965,10 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,Vector3.zero,2 *Time.deltaTime);
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
                   {
                       switchZoom = false;
@@ -1379,65 +1049,11 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+               
             break;
 
             case 7:
+            
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -1452,9 +1068,12 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,1.47f),5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,1.47f),2 *Time.deltaTime);
+             minFloat = -1.5f;
+            maxFloat =-3f;
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-3),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
                   {
                       switchZoom = false;
@@ -1540,62 +1159,7 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+               
             break;
 
             case 8:
@@ -1613,9 +1177,12 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(-1,0,-1.1f),5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(-1,0,-1.1f),2 *Time.deltaTime);
+            minFloat = -1.5f;
+            maxFloat =-3f;
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-3),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
                   {
                       switchZoom = false;
@@ -1695,62 +1262,7 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+               
             break;
 
             case 9:
@@ -1768,9 +1280,12 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(-1,0,1.12f),5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(-1,0,1.12f),2 *Time.deltaTime);
+             minFloat = -2f;
+            maxFloat =-3f;
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-3),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
                   {
                       switchZoom = false;
@@ -1875,62 +1390,7 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+                
             break;
 
             case 10:
@@ -1948,9 +1408,12 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,-1.5f),5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,-1.5f),2 *Time.deltaTime);
+             minFloat = -1.5f;
+            maxFloat =-3f;
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-3),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
                   {
                       switchZoom = false;
@@ -2044,62 +1507,7 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+                
             break;
 
             case 11:
@@ -2117,9 +1525,12 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,-.77f),5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,-.77f),2 *Time.deltaTime);
+            minFloat = -1.5f;
+            maxFloat =-3f;
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-3),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
                   {
                       switchZoom = false;
@@ -2217,62 +1628,7 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+               
             break;
 
             case 12:
@@ -2290,9 +1646,12 @@ blackAdFloat = basicRedFloat;
              MoveTextUp(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,0f),5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,0f),2 *Time.deltaTime);
+             minFloat = -1.5f;
+            maxFloat =-3f;
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-3),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
                   {
                       switchZoom = false;
@@ -2390,62 +1749,7 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+                
             break;
 
             case 13:
@@ -2463,9 +1767,12 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextUp(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,.75f),5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,.75f),2 *Time.deltaTime);
+            minFloat = -1.5f;
+            maxFloat =-3f;
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-3),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
                   {
                       switchZoom = false;
@@ -2569,62 +1876,7 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                  
-                basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
-                blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
-                boxShapeBlack.SetFloat("Vector1_824EC8D0",boxShapeBlackFloat);
-                boxShapeMetalic.SetFloat("Vector1_824EC8D0",boxShapeMetalicFloat);
-                boxShapeRed.SetFloat("Vector1_824EC8D0",boxShapeRedFloat);
-                boxShapeWhite.SetFloat("Vector1_824EC8D0",boxShapeWhiteFloat);
-                cutShader.SetFloat("Vector1_824EC8D0",cutShaderFloat);
-                devider.SetFloat("Vector1_824EC8D0",deviderFloat);
-                deviderSwerly.SetFloat("Vector1_824EC8D0",deviderSwerlyFloat);
-                dupontlogo.SetFloat("Vector1_824EC8D0",dupontlogoFloat);
-                genaricBlurry1.SetFloat("Vector1_824EC8D0",genaricBlurry1Float);
-                genaricBlurry.SetFloat("Vector1_824EC8D0",genaricBlurryFloat);
-                genaricfasteners.SetFloat("Vector1_824EC8D0",genaricfastenersFloat);
-                mint.SetFloat("Vector1_824EC8D0",mintFloat);
-                nomax.SetFloat("Vector1_824EC8D0",nomaxFloat);
-                orange.SetFloat("Vector1_824EC8D0",orangeFloat);
-                outside.SetFloat("Vector1_824EC8D0",outsideFloat);
-                tesla.SetFloat("Vector1_824EC8D0",teslaFloat);
-                whiteplastic.SetFloat("Vector1_824EC8D0",whiteplasticFloat);
-                yellow.SetFloat("Vector1_824EC8D0",yellowFloat);
-                metal1.SetFloat("Vector1_824EC8D0",metal1Float);
-                ruber2.SetFloat("Vector1_824EC8D0",ruber2Float);
-                metal3.SetFloat("Vector1_824EC8D0",metal3Float);
-                plastic4.SetFloat("Vector1_824EC8D0",plastic4Float);
-                plastic5.SetFloat("Vector1_824EC8D0",plastic5Float);
-                metal7.SetFloat("Vector1_824EC8D0",metal7Float);
-                plastic7.SetFloat("Vector1_824EC8D0",plastic7Float);
-                wplastic7.SetFloat("Vector1_824EC8D0",wplastic7Float);
-                metal8.SetFloat("Vector1_824EC8D0",metal8Float);
-                plastic8.SetFloat("Vector1_824EC8D0",plastic8Float);
-                black9.SetFloat("Vector1_824EC8D0",black9Float);
-                red9.SetFloat("Vector1_824EC8D0",red9Float);
-                white9.SetFloat("Vector1_824EC8D0",white9Float);
-                metal9.SetFloat("Vector1_824EC8D0",metal9Float);
-                plastic9.SetFloat("Vector1_824EC8D0",plastic9Float);
-                metal10.SetFloat("Vector1_824EC8D0",metal10Float);
-                plastic10.SetFloat("Vector1_824EC8D0",plastic10Float);
-                wplastic10.SetFloat("Vector1_824EC8D0",wplastic10Float);
-                black11.SetFloat("Vector1_824EC8D0",black11Float);
-                white11.SetFloat("Vector1_824EC8D0",white11Float);
-                red11.SetFloat("Vector1_824EC8D0",red11Float);
-                metal11.SetFloat("Vector1_824EC8D0",metal11Float);
-                plastic11.SetFloat("Vector1_824EC8D0",plastic11Float);
-                black12.SetFloat("Vector1_824EC8D0",black12Float);
-                white12.SetFloat("Vector1_824EC8D0",white12Float);
-                red12.SetFloat("Vector1_824EC8D0",red12Float);
-                metal12.SetFloat("Vector1_824EC8D0",metal12Float);
-                plastic12.SetFloat("Vector1_824EC8D0",plastic12Float);
-                black13.SetFloat("Vector1_824EC8D0",black13Float);
-                white13.SetFloat("Vector1_824EC8D0",white13Float);
-                red13.SetFloat("Vector1_824EC8D0",red13Float);
-                plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
-                metal13.SetFloat("Vector1_824EC8D0",metal13Float);
-                metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+               
             break;
 
             case 14:
@@ -2642,9 +1894,12 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextUp(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1,0,2.25f),5 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,2.25f),2 *Time.deltaTime);
+             minFloat = -1.5f;
+            maxFloat =-3f;
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-3),10*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-3),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
                   {
                       switchZoom = false;
@@ -2725,6 +1980,12 @@ blackAdFloat = basicRedFloat;
                // metal14Float = basicRedFloat;
                 //plastic14Float = basicRedFloat;
                  
+                
+            break;
+
+
+        }
+      
                 basicREd.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 blackAd.SetFloat("Vector1_824EC8D0",blackAdFloat);
                 blackPlas.SetFloat("Vector1_824EC8D0",blackPlasFloat);
@@ -2780,13 +2041,7 @@ blackAdFloat = basicRedFloat;
                 plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
                 metal13.SetFloat("Vector1_824EC8D0",metal13Float);
                 metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
-            break;
-
-
-        }
-      
-                    
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);    
         
       //  Debug.Log(moveDownasdasdadasdasd);
 
@@ -2796,174 +2051,8 @@ blackAdFloat = basicRedFloat;
         }
          
          
-         if ( Input.GetMouseButtonDown (0))
-         { 
-             RaycastHit hit2; 
-             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
-             if ( Physics.Raycast (ray,out hit2,100.0f))
-              {
-                            if(hit2.collider.tag == "background")
-                            {
-                                state = 0;  
-                                switchZoom = true;
-                                                        
-                            } 
-                            if (hit2.collider.tag == "Betamate Adhesive Bonding"  )
-                            {
-                                if (state == 0){
-                                    state = 1;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                             
-                            }
-                           
-
-                            if (hit2.collider.tag == "Cover Sealing"  )
-                            {
-                               if (state == 0){
-                                    state = 2;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                              
-                            }
-                            if (hit2.collider.tag == "HV Connector System" )
-                            {
-                               if (state == 0){
-                                    state = 3;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-                             if (hit2.collider.tag == "LV Connector"  )
-                            {
-                              if (state == 0){
-                                    state = 4;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-                             if (hit2.collider.tag == "Fluid Connectors" )
-                            {
-                               if (state == 0){
-                                    state = 5;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                                
-                            }
-                             if (hit2.collider.tag == "Structural Bonding" )
-                            {
-                              if (state == 0){
-                                    state = 6;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-
-                            if (hit2.collider.tag == "Module End Plates"  )
-                            {
-                               if (state == 0){
-                                    state = 7;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-
-                            if (hit2.collider.tag == "Innovative Design for Hybrid Cooling Plate"  )
-                            {
-                               if (state == 0){
-                                    state = 8;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-
-                            if (hit2.collider.tag == "Thermal Conductive Interface"  )
-                            {
-                               if (state == 0){
-                                    state = 9;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-
-                            if (hit2.collider.tag == "Plastic Cell Holders"  )
-                            {
-                               if (state == 0){
-                                    state = 10;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-
-                            if (hit2.collider.tag == "Battery Cell to Pack Structural Bonding"  )
-                            {
-                              if (state == 0){
-                                    state = 11;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-
-                            if (hit2.collider.tag == "Prismatic Cell Bonding"  )
-                            {
-                               if (state == 0){
-                                    state = 12;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-
-                            if (hit2.collider.tag == "Cell to Cell Insulation" )
-                            {
-                               if (state == 0){
-                                    state = 13;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-
-                            if (hit2.collider.tag == "Immersion Cooling"   )
-                            {
-                               if (state == 0){
-                                    state = 14;
-                              switchZoom = true;
-                                }else{
-                                    state = 0;
-                                    switchZoom =true;
-                                }
-                            }
-
-   }
- }
+         
+ 
         if (Input.touchCount > 0 && canSpin && !StopNextMotion)//Real Touch Inputs
         {
              Touch touch = Input.GetTouch(0);
@@ -2994,7 +2083,11 @@ blackAdFloat = basicRedFloat;
                     break;
 
                 //Determine if the touch is a moving touch
-                case TouchPhase.Moved:                  
+                case TouchPhase.Moved:    
+                 //timer = false;      
+                 if (timerTime >=.5f)
+                 timer = false;
+                 Debug.Log("moving finger!!");        
                     break;
 
                 case TouchPhase.Ended:
@@ -3003,7 +2096,8 @@ blackAdFloat = basicRedFloat;
                     Ray rayEnd = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
                     if (Physics.Raycast(rayEnd,out hitEnd))
                     {
-                        if(timerTime <= .15f)
+                       // if(!(Input.touchCount > 1))                        
+                        if( timer)
                         {
                         if(hitEnd.collider != null)
                         {    
@@ -3022,7 +2116,7 @@ blackAdFloat = basicRedFloat;
                                 if (state == 0){
                                     state = 1;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 1){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3035,7 +2129,7 @@ blackAdFloat = basicRedFloat;
                                if (state == 0){
                                     state = 2;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 2){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3046,7 +2140,7 @@ blackAdFloat = basicRedFloat;
                                if (state == 0){
                                     state = 3;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 3){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3056,7 +2150,7 @@ blackAdFloat = basicRedFloat;
                               if (state == 0){
                                     state = 4;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 4){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3066,7 +2160,7 @@ blackAdFloat = basicRedFloat;
                                if (state == 0){
                                     state = 5;
                               switchZoom = true;
-                                }else{
+                                }else if(state != 5){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3077,7 +2171,7 @@ blackAdFloat = basicRedFloat;
                               if (state == 0){
                                     state = 6;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 6){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3088,7 +2182,7 @@ blackAdFloat = basicRedFloat;
                                if (state == 0){
                                     state = 7;
                               switchZoom = true;
-                                }else{
+                                }else if(state != 7){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3099,7 +2193,7 @@ blackAdFloat = basicRedFloat;
                                if (state == 0){
                                     state = 8;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 8){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3110,7 +2204,7 @@ blackAdFloat = basicRedFloat;
                                if (state == 0){
                                     state = 9;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 9){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3121,7 +2215,7 @@ blackAdFloat = basicRedFloat;
                                if (state == 0){
                                     state = 10;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 10){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3132,7 +2226,7 @@ blackAdFloat = basicRedFloat;
                               if (state == 0){
                                     state = 11;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 11){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3143,18 +2237,18 @@ blackAdFloat = basicRedFloat;
                                if (state == 0){
                                     state = 12;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 12){
                                     state = 0;
                                     switchZoom =true;
                                 }
                             }
 
-                            if (hitTag == "Cell to cell insulation" && hitEnd.collider.tag == hitTag)
+                            if (hitTag == "Cell to Cell Insulation" && hitEnd.collider.tag == hitTag)
                             {
                                if (state == 0){
                                     state = 13;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 13){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3165,7 +2259,7 @@ blackAdFloat = basicRedFloat;
                                if (state == 0){
                                     state = 14;
                               switchZoom = true;
-                                }else{
+                                }else if (state != 14){
                                     state = 0;
                                     switchZoom =true;
                                 }
@@ -3232,7 +2326,7 @@ blackAdFloat = basicRedFloat;
             float offset = Input.GetAxis("Mouse ScrollWheel");
            // Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
             if(Input.touchCount <= 0)
-                UpdateZoomMouse(offset);
+               // UpdateZoomMouse(offset);
 
             if(Input.GetKey(KeyCode.LeftControl))
             {
@@ -3312,9 +2406,11 @@ blackAdFloat = basicRedFloat;
     {
         float rot = CamParent.transform.eulerAngles.x;
         if (rot>0 && rot<180)
-         CamParent.transform.eulerAngles = new Vector3(Mathf.Clamp(CamParent.transform.eulerAngles.x, 0, 90), 0, 0);
+         CamParent.transform.eulerAngles = new Vector3(Mathf.Clamp(CamParent.transform.eulerAngles.x, 0, 50), 0, 0);
+         //CamParent.transform.eulerAngles = new Vector3(Mathf.Clamp(CamParent.transform.eulerAngles.x, 0, 90), 0, 0); for full up
         else if (rot >180)
-            CamParent.transform.eulerAngles = new Vector3(Mathf.Clamp(CamParent.transform.eulerAngles.x, 270,360), 0, 0);
+            CamParent.transform.eulerAngles = new Vector3(Mathf.Clamp(CamParent.transform.eulerAngles.x, 310,360), 0, 0);
+            //CamParent.transform.eulerAngles = new Vector3(Mathf.Clamp(CamParent.transform.eulerAngles.x, 270,360), 0, 0); for full down
      
 
     }
