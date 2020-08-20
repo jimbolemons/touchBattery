@@ -353,10 +353,10 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,Vector3.zero,2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,Vector3.zero,4 *Time.deltaTime);
             // batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2.8f*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2f*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                  // Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),12.8f*Time.deltaTime);
                  // CamParent.transform.position = Vector3.MoveTowards(CamParent.transform.position,Vector3.zero,5*Time.deltaTime);
@@ -455,7 +455,7 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);   
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,Vector3.zero,2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,Vector3.zero,4 *Time.deltaTime);
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
@@ -557,7 +557,7 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,Vector3.zero,2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,Vector3.zero,4 *Time.deltaTime);
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
@@ -768,7 +768,7 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(.915f,0,-2.72f),2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(.915f,0,-2.72f),4 *Time.deltaTime);
               if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-1),2*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
@@ -865,7 +865,7 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(0,0,-2.75f),2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,0,-2.75f),4 *Time.deltaTime);
             
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-1),2*Time.deltaTime);
@@ -965,7 +965,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,Vector3.zero,2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,Vector3.zero,4 *Time.deltaTime);
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
@@ -1068,7 +1068,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,1.47f),2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,0,1.47f),4 *Time.deltaTime);
              minFloat = -1.5f;
             maxFloat =-3f;
              if (switchZoom){
@@ -1177,7 +1177,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(-1,0,-1.1f),2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(-1,0,-1.1f),4 *Time.deltaTime);
             minFloat = -1.5f;
             maxFloat =-3f;
              if (switchZoom){
@@ -1280,7 +1280,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(-1,0,1.12f),2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(-1,0,1.12f),4 *Time.deltaTime);
              minFloat = -2f;
             maxFloat =-3f;
              if (switchZoom){
@@ -1408,7 +1408,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,-1.5f),2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,0,-1.5f),4 *Time.deltaTime);
              minFloat = -1.5f;
             maxFloat =-3f;
              if (switchZoom){
@@ -1525,7 +1525,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,-.77f),2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,0,-.77f),4 *Time.deltaTime);
             minFloat = -1.5f;
             maxFloat =-3f;
              if (switchZoom){
@@ -1646,7 +1646,7 @@ blackAdFloat = basicRedFloat;
              MoveTextUp(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,0f),2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,0,0f),4 *Time.deltaTime);
              minFloat = -1.5f;
             maxFloat =-3f;
              if (switchZoom){
@@ -1767,7 +1767,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextUp(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,.75f),2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,0,.75f),4 *Time.deltaTime);
             minFloat = -1.5f;
             maxFloat =-3f;
              if (switchZoom){
@@ -1894,7 +1894,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextUp(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Slerp(batteryModel.transform.localPosition,new Vector3(1,0,2.25f),2 *Time.deltaTime);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,0,2.25f),4 *Time.deltaTime);
              minFloat = -1.5f;
             maxFloat =-3f;
              if (switchZoom){
