@@ -21,6 +21,7 @@ public class StartAtBottom : MonoBehaviour
     public RectTransform PrismaticCellBonding;     
     public RectTransform celltocell;          
     public RectTransform ImmersionCooling;
+    public RectTransform CoolingLines;
      private void Awake()
     {
         basess.SetActive(false);
@@ -51,6 +52,8 @@ public class StartAtBottom : MonoBehaviour
         celltocell.anchoredPosition = bottomMarker.position;
 
         ImmersionCooling.anchoredPosition = bottomMarker.position;
+
+        CoolingLines.anchoredPosition = bottomMarker.position;
 
     }
     

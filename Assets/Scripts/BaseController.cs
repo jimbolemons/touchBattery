@@ -23,7 +23,7 @@ public class BaseController : MonoBehaviour {
 
 	public static BaseController instance;
     public bool canSpin = true;
-    public GameObject Cam,CamParent;
+    GameObject Cam,CamParent;
 
     private float yTouch = 100;
 
@@ -70,8 +70,8 @@ public class BaseController : MonoBehaviour {
     public RectTransform PrismaticCellBonding;
     public RectTransform Celltocellinsulation;
     public RectTransform ImmersionCooling;
-    //bool moveDownBat = false;
-    //bool moveUpBat = false;
+    public RectTransform CoolingLines;
+   
    
     
     public Material basicREd;
@@ -130,6 +130,10 @@ public class BaseController : MonoBehaviour {
     public Material metal13;
     public Material metal14;
     public Material plastic14;
+    public Material rubber15;
+
+
+
     float basicREdFloat;
     float blackAdFloat;
     float blackPlasFloat;
@@ -186,6 +190,9 @@ public class BaseController : MonoBehaviour {
     float metal13Float;
     float metal14Float;
     float plastic14Float;
+    float rubber15Float;
+
+
 
     bool switchZoom = false;
 
@@ -208,7 +215,7 @@ public class BaseController : MonoBehaviour {
     
     
 
-   // public HighlightGroup_Group Exterior;
+
 
 
 
@@ -223,7 +230,7 @@ public class BaseController : MonoBehaviour {
         instance = this.GetComponent<BaseController>();
         
     }
-    // Update is called once per frame
+    
 
     void UpdateRotation(Vector2 delta)
     {
@@ -334,8 +341,7 @@ public class BaseController : MonoBehaviour {
       
 
         switch(state)
-        {
-            
+        {            
             case 0:
             minFloat = -5f;
             maxFloat = -10f;
@@ -353,13 +359,13 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1f,0),4 *Time.deltaTime);
-            // batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,Vector3.zero,5 *Time.deltaTime);
+             MoveTextDown(CoolingLines,1000);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,.1f,0),4 *Time.deltaTime);
+            
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2f*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
-                 // Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),12.8f*Time.deltaTime);
-                 // CamParent.transform.position = Vector3.MoveTowards(CamParent.transform.position,Vector3.zero,5*Time.deltaTime);
+               
                   if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
                   {
                       switchZoom = false;
@@ -427,6 +433,8 @@ public class BaseController : MonoBehaviour {
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
+
                  
                
 
@@ -455,6 +463,7 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);   
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1.5f,0),4 *Time.deltaTime);
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
@@ -534,6 +543,7 @@ public class BaseController : MonoBehaviour {
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                  
                 
@@ -557,6 +567,7 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1.5f,0),4 *Time.deltaTime);
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
@@ -633,6 +644,7 @@ public class BaseController : MonoBehaviour {
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                 
             break;
@@ -653,16 +665,12 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
-             MoveTextDown(ImmersionCooling,1000);
-            // batteryModel.transform.localPosition = Vector3.MoveTowards(batteryModel.transform.localPosition,new Vector3(1.41f,0,-2.7f),10 *Time.deltaTime);
+             MoveTextDown(ImmersionCooling,1000);     
+              MoveTextDown(CoolingLines,1000);      
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1.41f,.2f,-2.7f),4*Time.deltaTime);
-             //batteryModel.transform.localPosition = new Vector3(1.41f,0,-2.7f);
-             
-             if (switchZoom){
-                  //Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-1),10*Time.deltaTime);
-                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-1),2*Time.deltaTime);
-                  //CamParent.transform.position = Vector3.MoveTowards(CamParent.transform.position,Vector3.zero,10*Time.deltaTime);
-                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
+             if (switchZoom){                
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-1),2*Time.deltaTime);                
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z > -1.5 && Cam.transform.localPosition.z < -1)
                   {
                       switchZoom = false;
@@ -747,6 +755,7 @@ public class BaseController : MonoBehaviour {
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                
             break;
@@ -768,6 +777,7 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(.915f,.1f,-2.72f),4 *Time.deltaTime);
               if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-1),2*Time.deltaTime);
@@ -844,6 +854,7 @@ public class BaseController : MonoBehaviour {
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
               
             break;
@@ -865,6 +876,7 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,.3f,-2.75f),4 *Time.deltaTime);
             
              if (switchZoom){
@@ -944,6 +956,7 @@ blackAdFloat = basicRedFloat;
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                 
             break;
@@ -965,6 +978,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1.5f,0),4 *Time.deltaTime);
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
@@ -1048,6 +1062,7 @@ blackAdFloat = basicRedFloat;
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                
             break;
@@ -1068,6 +1083,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,.5f,1.47f),4 *Time.deltaTime);
              minFloat = -1.5f;
             maxFloat =-3f;
@@ -1158,6 +1174,7 @@ blackAdFloat = basicRedFloat;
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                
             break;
@@ -1177,6 +1194,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(-1,.5f,-1.1f),4 *Time.deltaTime);
             minFloat = -1.5f;
             maxFloat =-3f;
@@ -1261,6 +1279,7 @@ blackAdFloat = basicRedFloat;
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                
             break;
@@ -1280,6 +1299,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(-1,.5f,1.12f),4 *Time.deltaTime);
              minFloat = -2f;
             maxFloat =-3f;
@@ -1389,6 +1409,7 @@ blackAdFloat = basicRedFloat;
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                 
             break;
@@ -1408,6 +1429,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,.5f,-1.5f),4 *Time.deltaTime);
              minFloat = -1.5f;
             maxFloat =-3f;
@@ -1506,6 +1528,7 @@ blackAdFloat = basicRedFloat;
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                 
             break;
@@ -1525,6 +1548,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,.5f,-.77f),4 *Time.deltaTime);
             minFloat = -1.5f;
             maxFloat =-3f;
@@ -1627,6 +1651,7 @@ blackAdFloat = basicRedFloat;
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                
             break;
@@ -1646,6 +1671,7 @@ blackAdFloat = basicRedFloat;
              MoveTextUp(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,.5f,0f),4 *Time.deltaTime);
              minFloat = -1.5f;
             maxFloat =-3f;
@@ -1748,6 +1774,7 @@ blackAdFloat = basicRedFloat;
                 metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                 
             break;
@@ -1767,6 +1794,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextUp(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,.5f,.75f),4 *Time.deltaTime);
             minFloat = -1.5f;
             maxFloat =-3f;
@@ -1875,6 +1903,7 @@ blackAdFloat = basicRedFloat;
                 //metal13Float = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                
             break;
@@ -1894,6 +1923,7 @@ blackAdFloat = basicRedFloat;
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextUp(ImmersionCooling,1000);
+              MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,.5f,2.25f),4 *Time.deltaTime);
              minFloat = -1.5f;
             maxFloat =-3f;
@@ -1979,8 +2009,108 @@ blackAdFloat = basicRedFloat;
                 metal13Float = basicRedFloat;
                // metal14Float = basicRedFloat;
                 //plastic14Float = basicRedFloat;
+                rubber15Float = basicRedFloat;
                  
                 
+            break;
+            case 15:
+            minFloat = -5f;
+            maxFloat = -10f;
+            MoveTextDown(Adhesivebonding,1000);
+            MoveTextDown(Coversealing,1000);
+            MoveTextDown(HVconnectorsystem,1000);
+           MoveTextDown(LVconnector,1000);
+            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Structuralbonding,1000);
+             MoveTextDown(ModuleEndPlates,1000);
+             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+             MoveTextDown(PlasticCellHolders,1000);
+             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+             MoveTextDown(PrismaticCellBonding,1000);
+             MoveTextDown(Celltocellinsulation,1000);
+             MoveTextDown(ImmersionCooling,1000);
+              MoveTextUp(CoolingLines,1000);
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1.5f,0),4 *Time.deltaTime);
+             if (switchZoom){
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
+                  if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
+                  {
+                      switchZoom = false;
+                  }
+             }
+             if (basicRedFloat<1.1f){                 
+                 basicRedFloat +=Time.deltaTime;
+                 }else{
+                     basicRedFloat = 1.1f;
+                 } 
+             if (rubber15Float>0)
+             {
+                 rubber15Float -= Time.deltaTime;
+             }else{
+                 rubber15Float = 0;
+             }
+            
+
+
+                 blackAdFloat = basicRedFloat;
+                blackPlasFloat = basicRedFloat;
+                boxShapeBlackFloat = basicRedFloat;
+                boxShapeMetalicFloat = basicRedFloat;
+                boxShapeRedFloat = basicRedFloat;
+                boxShapeWhiteFloat = basicRedFloat;
+                cutShaderFloat = basicRedFloat;
+                deviderFloat = basicRedFloat;
+                deviderSwerlyFloat = basicRedFloat;
+                dupontlogoFloat = basicRedFloat;
+                genaricBlurry1Float = basicRedFloat;
+                genaricBlurryFloat = basicRedFloat;
+                genaricfastenersFloat = basicRedFloat;
+                mintFloat = basicRedFloat;
+                nomaxFloat = basicRedFloat;
+                orangeFloat = basicRedFloat;
+                outsideFloat = basicRedFloat;
+                teslaFloat = basicRedFloat;
+                whiteplasticFloat = basicRedFloat;
+                yellowFloat = basicRedFloat;
+                metal1Float = basicRedFloat;
+                ruber2Float = basicRedFloat;
+                metal3Float = basicRedFloat;
+                plastic4Float = basicRedFloat;
+                plastic5Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
+                metal8Float = basicRedFloat;
+                plastic8Float = basicRedFloat;
+                black9Float = basicRedFloat;
+                red9Float = basicRedFloat;
+                white9Float = basicRedFloat;
+                metal9Float = basicRedFloat;
+                plastic9Float = basicRedFloat;
+                metal10Float = basicRedFloat;
+                plastic10Float = basicRedFloat;
+                wplastic10Float = basicRedFloat;
+                black11Float = basicRedFloat;
+                white11Float = basicRedFloat;
+                red11Float = basicRedFloat;
+                metal11Float = basicRedFloat;
+                plastic11Float = basicRedFloat;
+                black12Float = basicRedFloat;
+                white12Float = basicRedFloat;
+                red12Float = basicRedFloat;
+                metal12Float = basicRedFloat;
+                plastic12Float = basicRedFloat;
+                black13Float = basicRedFloat;
+                white13Float = basicRedFloat;
+                red13Float = basicRedFloat;
+                plastic13Float = basicRedFloat;
+                metal13Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
+                //rubber15Float = basicRedFloat;
+                 
             break;
 
 
@@ -2041,7 +2171,8 @@ blackAdFloat = basicRedFloat;
                 plastic13.SetFloat("Vector1_824EC8D0",plastic13Float);
                 metal13.SetFloat("Vector1_824EC8D0",metal13Float);
                 metal14.SetFloat("Vector1_824EC8D0",metal14Float);
-                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);    
+                plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
+                rubber15.SetFloat("Vector1_824EC8D0",rubber15Float);    
         
       //  Debug.Log(moveDownasdasdadasdasd);
 

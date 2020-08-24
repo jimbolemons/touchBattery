@@ -20,6 +20,8 @@ TagManager:
   - Module End Plates
   - LV Connector
   - Immersion Cooling
+  - case
+  - Cooling Lines
   layers:
   - Default
   - TransparentFX
