@@ -2014,8 +2014,8 @@ blackAdFloat = basicRedFloat;
                 
             break;
             case 15:
-            minFloat = -5f;
-            maxFloat = -10f;
+            minFloat = -4f;
+            maxFloat = -8f;
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -2033,9 +2033,9 @@ blackAdFloat = basicRedFloat;
               MoveTextUp(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1.5f,0),4 *Time.deltaTime);
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-7.5f),2*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
-                  if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
+                  if (Cam.transform.localPosition.z < -7.5 && Cam.transform.localPosition.z > -8)
                   {
                       switchZoom = false;
                   }
@@ -2391,6 +2391,16 @@ blackAdFloat = basicRedFloat;
                                     state = 14;
                               switchZoom = true;
                                 }else if (state != 14){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+                             if (hitTag == "Cooling Lines" && hitEnd.collider.tag == hitTag )
+                            {
+                               if (state == 0){
+                                    state = 15;
+                              switchZoom = true;
+                                }else if (state != 15){
                                     state = 0;
                                     switchZoom =true;
                                 }
