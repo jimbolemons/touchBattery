@@ -26,19 +26,19 @@ RenderSettings:
   m_AmbientIntensity: 0.72
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 928b4cd19072efa4d8ef5419e1f46467, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d26871020f7de994f9835ec788b4f8c6, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 1
+  m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 059994c395c8f7f4580b70315c65bc3c, type: 3}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.6947715, g: 0.6947715, b: 0.6947756, a: 1}
+  m_IndirectSpecularColor: {r: 0.39912173, g: 0.39826912, b: 0.40167385, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2540,7 +2540,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1355970597}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &486439732
+--- !u!65 &486439735
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10129,7 +10129,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 4c1b5ad3e0ca77743879bea90f7617c3, type: 2}
+  sharedProfile: {fileID: 11400000, guid: a8b6f00d0cf59bc4eba0c27b24ae5bf9, type: 2}
 --- !u!4 &1898011073
 Transform:
   m_ObjectHideFlags: 0
@@ -10361,7 +10361,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1355970597}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1996550655
+--- !u!65 &1996550660
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10372,36 +10372,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.46, y: 4.37, z: 1.5}
-  m_Center: {x: -0.17, y: 0, z: 0.07}
---- !u!64 &1996550658
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996550654}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5871308139199491806, guid: 2c796d43517fcd045b8ba54b9e970f1b, type: 3}
---- !u!64 &1996550659
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996550654}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5871308139199491806, guid: 2c796d43517fcd045b8ba54b9e970f1b, type: 3}
+  m_Size: {x: 3.47, y: 4.46, z: 1.55}
+  m_Center: {x: -0.17, y: 0, z: 0.26}
 --- !u!1 &2004074411 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4820729246435549544, guid: 2c796d43517fcd045b8ba54b9e970f1b,
