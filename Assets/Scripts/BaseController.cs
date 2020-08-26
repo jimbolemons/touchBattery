@@ -131,6 +131,15 @@ public class BaseController : MonoBehaviour {
     public Material metal14;
     public Material plastic14;
     public Material rubber15;
+    public Material metal1Red;
+    public Material plastic11Red;
+    public Material plastic12Red;
+    public Material plastic13Red;
+    public Material plastic6Red;
+
+
+
+
 
 
 
@@ -376,7 +385,28 @@ public class BaseController : MonoBehaviour {
                  }else{
                      basicRedFloat = 0;
                  }
-
+                if (plastic11Red.GetFloat("Vector1_BBEE40D8") != 0)
+                 {
+                        plastic11Red.SetFloat("Vector1_BBEE40D8",0);
+                 }
+                 if (metal1Red.GetFloat("Vector1_BBEE40D8") != 0)
+                 {
+                        metal1Red.SetFloat("Vector1_BBEE40D8",0);
+                 }
+                 if (plastic12Red.GetFloat("Vector1_BBEE40D8") != 0)
+                 {
+                        plastic12Red.SetFloat("Vector1_BBEE40D8",0);
+                 }
+                 if (plastic13Red.GetFloat("Vector1_BBEE40D8") != 0)
+                 {
+                        plastic13Red.SetFloat("Vector1_BBEE40D8",0);
+                 }
+                  if (plastic6Red.GetFloat("Vector1_BBEE40D8") != 0)
+                 {
+                        plastic6Red.SetFloat("Vector1_BBEE40D8",0);
+                 }
+                
+                
                 
                 blackAdFloat = basicRedFloat;
                 blackPlasFloat = basicRedFloat;
@@ -434,6 +464,12 @@ public class BaseController : MonoBehaviour {
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                metal1Red.SetFloat("Vector1_824EC8D0",1);
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+
 
                  
                
@@ -447,6 +483,7 @@ public class BaseController : MonoBehaviour {
             break;
 
             case 1:
+            //HERE
             minFloat = -5f;
             maxFloat = -10f;
             MoveTextUp(Adhesivebonding,1000);
@@ -474,6 +511,19 @@ public class BaseController : MonoBehaviour {
                   {
                       switchZoom = false;
                   }
+             }
+             if(!switchZoom)
+             {
+                 float y = metal1Red.GetFloat("Vector1_BBEE40D8");
+                 if (metal1Red.GetFloat("Vector1_BBEE40D8") > 1)
+                 {
+
+                 }else{
+                     y += Time.deltaTime;
+                 }                
+                metal1Red.SetFloat("Vector1_BBEE40D8",y);
+                metal1Red.SetFloat("Vector1_824EC8D0",-y);
+
              }
             if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
@@ -544,6 +594,10 @@ public class BaseController : MonoBehaviour {
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                  
                 
@@ -645,6 +699,10 @@ public class BaseController : MonoBehaviour {
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                 
             break;
@@ -756,6 +814,10 @@ public class BaseController : MonoBehaviour {
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                
             break;
@@ -855,6 +917,10 @@ public class BaseController : MonoBehaviour {
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
               
             break;
@@ -957,6 +1023,10 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                 
             break;
@@ -987,6 +1057,19 @@ blackAdFloat = basicRedFloat;
                   {
                       switchZoom = false;
                   }
+             }
+             if(!switchZoom)
+             {
+                 float y = plastic6Red.GetFloat("Vector1_BBEE40D8");
+                 if (plastic6Red.GetFloat("Vector1_BBEE40D8") > 1)
+                 {
+
+                 }else{
+                     y += Time.deltaTime;
+                 }                
+                plastic6Red.SetFloat("Vector1_BBEE40D8",y);
+                plastic6Red.SetFloat("Vector1_824EC8D0",-y);
+
              }
              if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
@@ -1063,6 +1146,10 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+               // plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                
             break;
@@ -1170,6 +1257,10 @@ blackAdFloat = basicRedFloat;
                // metal14Float = basicRedFloat;
                 //plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                
             break;
@@ -1275,6 +1366,10 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                
             break;
@@ -1405,6 +1500,10 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                 
             break;
@@ -1524,11 +1623,16 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                 
             break;
 
             case 11:
+            //HERE
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -1547,13 +1651,28 @@ blackAdFloat = basicRedFloat;
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,.5f,-.77f),4 *Time.deltaTime);
             minFloat = -1.5f;
             maxFloat =-3f;
+            
              if (switchZoom){
+                
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-3),2*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   if (Cam.transform.localPosition.z > -3.5 && Cam.transform.localPosition.z < -3)
                   {
                       switchZoom = false;
                   }
+             }
+             if(!switchZoom)
+             {
+                 float y = plastic11Red.GetFloat("Vector1_BBEE40D8");
+                 if (plastic11Red.GetFloat("Vector1_BBEE40D8") > 1)
+                 {
+
+                 }else{
+                     y += Time.deltaTime;
+                 }                
+                plastic11Red.SetFloat("Vector1_BBEE40D8",y);
+                plastic11Red.SetFloat("Vector1_824EC8D0",-y);
+
              }
              if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
@@ -1589,6 +1708,13 @@ blackAdFloat = basicRedFloat;
                  white11Float -= Time.deltaTime;
              }else{
                  white11Float = 0;
+             }
+             if(plastic11Red.GetFloat("Vector1_824EC8D0")>0){
+                 float y = plastic11Red.GetFloat("Vector1_824EC8D0");
+                 y -= Time.deltaTime;
+             plastic11Red.SetFloat("Vector1_824EC8D0",y);
+             }else{
+                 plastic11Red.SetFloat("Vector1_824EC8D0",0);
              }
 
                  blackAdFloat = basicRedFloat;
@@ -1647,11 +1773,16 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+               // plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                
             break;
 
             case 12:
+            //HERE
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -1677,6 +1808,19 @@ blackAdFloat = basicRedFloat;
                   {
                       switchZoom = false;
                   }
+             }
+              if(!switchZoom)
+             {
+                 float y = plastic12Red.GetFloat("Vector1_BBEE40D8");
+                 if (plastic12Red.GetFloat("Vector1_BBEE40D8") > 1)
+                 {
+
+                 }else{
+                     y += Time.deltaTime;
+                 }                
+                plastic12Red.SetFloat("Vector1_BBEE40D8",y);
+                plastic12Red.SetFloat("Vector1_824EC8D0",-y);
+
              }
              if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
@@ -1712,6 +1856,13 @@ blackAdFloat = basicRedFloat;
                  white12Float -= Time.deltaTime;
              }else{
                  white12Float = 0;
+             }
+              if(plastic12Red.GetFloat("Vector1_824EC8D0")>0){
+                 float y = plastic12Red.GetFloat("Vector1_824EC8D0");
+                 y -= Time.deltaTime;
+             plastic12Red.SetFloat("Vector1_824EC8D0",y);
+             }else{
+                 plastic12Red.SetFloat("Vector1_824EC8D0",0);
              }
 
                  blackAdFloat = basicRedFloat;
@@ -1770,11 +1921,16 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                //plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                 
             break;
 
             case 13:
+            //HERE
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
@@ -1800,6 +1956,19 @@ blackAdFloat = basicRedFloat;
                   {
                       switchZoom = false;
                   }
+             }
+             if(!switchZoom)
+             {
+                 float y = plastic13Red.GetFloat("Vector1_BBEE40D8");
+                 if (plastic13Red.GetFloat("Vector1_BBEE40D8") > 1)
+                 {
+
+                 }else{
+                     y += Time.deltaTime;
+                 }                
+                plastic13Red.SetFloat("Vector1_BBEE40D8",y);
+                plastic13Red.SetFloat("Vector1_824EC8D0",-y);
+
              }
              if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
@@ -1842,6 +2011,15 @@ blackAdFloat = basicRedFloat;
              }else{
                  nomaxFloat = 0;
              }
+             if(plastic13Red.GetFloat("Vector1_824EC8D0")>0){
+                 float y = plastic13Red.GetFloat("Vector1_824EC8D0");
+                 y -= Time.deltaTime;
+             plastic13Red.SetFloat("Vector1_824EC8D0",y);
+             }else{
+                 plastic13Red.SetFloat("Vector1_824EC8D0",0);
+             }
+
+                
 
                 blackAdFloat = basicRedFloat;
                 blackPlasFloat = basicRedFloat;
@@ -1899,7 +2077,10 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
-                 
+                 plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                //plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                
             break;
 
@@ -2011,6 +2192,10 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
                 
             break;
@@ -2111,6 +2296,10 @@ blackAdFloat = basicRedFloat;
                 metal14Float = basicRedFloat;
                 plastic14Float = basicRedFloat;
                 //rubber15Float = basicRedFloat;
+                plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                  
             break;
 
