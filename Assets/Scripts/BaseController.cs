@@ -1095,31 +1095,26 @@ blackAdFloat = basicRedFloat;
                       switchZoom = false;
                   }
              }
-             if (basicRedFloat<1.1f){                 
+             
+                if (basicRedFloat<1.1f){                 
                  basicRedFloat +=Time.deltaTime;
                  }else{
                      basicRedFloat = 1.1f;
                  } 
-                  if (metal7Float>0)
+                  if (metal14Float>0)
              {
-                 metal7Float -= Time.deltaTime;
+                 metal14Float -= Time.deltaTime;
              }else{
-                 metal7Float = 0;
+                 metal14Float = 0;
              }
-              if (plastic7Float>0)
+               if (plastic14Float>0)
              {
-                 plastic7Float -= Time.deltaTime;
+                 plastic14Float -= Time.deltaTime;
              }else{
-                 plastic7Float = 0;
-             }
-              if (wplastic7Float>0)
-             {
-                 wplastic7Float -= Time.deltaTime;
-             }else{
-                 wplastic7Float = 0;
+                 plastic14Float = 0;
              }
 
-                blackAdFloat = basicRedFloat;
+                 blackAdFloat = basicRedFloat;
                 blackPlasFloat = basicRedFloat;
                 boxShapeBlackFloat = basicRedFloat;
                 boxShapeMetalicFloat = basicRedFloat;
@@ -1144,9 +1139,9 @@ blackAdFloat = basicRedFloat;
                 metal3Float = basicRedFloat;
                 plastic4Float = basicRedFloat;
                 plastic5Float = basicRedFloat;
-               // metal7Float = basicRedFloat;
-               // plastic7Float = basicRedFloat;
-               // wplastic7Float = basicRedFloat;
+                metal7Float = basicRedFloat;
+                plastic7Float = basicRedFloat;
+                wplastic7Float = basicRedFloat;
                 metal8Float = basicRedFloat;
                 plastic8Float = basicRedFloat;
                 black9Float = basicRedFloat;
@@ -1172,8 +1167,8 @@ blackAdFloat = basicRedFloat;
                 red13Float = basicRedFloat;
                 plastic13Float = basicRedFloat;
                 metal13Float = basicRedFloat;
-                metal14Float = basicRedFloat;
-                plastic14Float = basicRedFloat;
+               // metal14Float = basicRedFloat;
+                //plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
                  
                
@@ -1912,18 +1907,18 @@ blackAdFloat = basicRedFloat;
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextDown(HVconnectorsystem,1000);
-           MoveTextDown(LVconnector,1000);
+            MoveTextDown(LVconnector,1000);
             MoveTextDown(FluidConnectors,1000);
-             MoveTextDown(Structuralbonding,1000);
-             MoveTextDown(ModuleEndPlates,1000);
-             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
-             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
-             MoveTextDown(PlasticCellHolders,1000);
-             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
-             MoveTextDown(PrismaticCellBonding,1000);
-             MoveTextDown(Celltocellinsulation,1000);
-             MoveTextUp(ImmersionCooling,1000);
-              MoveTextDown(CoolingLines,1000);
+            MoveTextDown(Structuralbonding,1000);
+            MoveTextDown(ModuleEndPlates,1000);
+            MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+            MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+            MoveTextDown(PlasticCellHolders,1000);
+            MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+            MoveTextDown(PrismaticCellBonding,1000);
+            MoveTextDown(Celltocellinsulation,1000);
+            MoveTextUp(ImmersionCooling,1000);
+            MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1,.5f,2.25f),4 *Time.deltaTime);
              minFloat = -1.5f;
             maxFloat =-3f;
@@ -1941,20 +1936,26 @@ blackAdFloat = basicRedFloat;
                  }else{
                      basicRedFloat = 1.1f;
                  } 
-                  if (metal14Float>0)
+                  if (metal7Float>0)
              {
-                 metal14Float -= Time.deltaTime;
+                 metal7Float -= Time.deltaTime;
              }else{
-                 metal14Float = 0;
+                 metal7Float = 0;
              }
-               if (plastic14Float>0)
+              if (plastic7Float>0)
              {
-                 plastic14Float -= Time.deltaTime;
+                 plastic7Float -= Time.deltaTime;
              }else{
-                 plastic14Float = 0;
+                 plastic7Float = 0;
+             }
+              if (wplastic7Float>0)
+             {
+                 wplastic7Float -= Time.deltaTime;
+             }else{
+                 wplastic7Float = 0;
              }
 
-                 blackAdFloat = basicRedFloat;
+                blackAdFloat = basicRedFloat;
                 blackPlasFloat = basicRedFloat;
                 boxShapeBlackFloat = basicRedFloat;
                 boxShapeMetalicFloat = basicRedFloat;
@@ -1979,9 +1980,9 @@ blackAdFloat = basicRedFloat;
                 metal3Float = basicRedFloat;
                 plastic4Float = basicRedFloat;
                 plastic5Float = basicRedFloat;
-                metal7Float = basicRedFloat;
-                plastic7Float = basicRedFloat;
-                wplastic7Float = basicRedFloat;
+               // metal7Float = basicRedFloat;
+               // plastic7Float = basicRedFloat;
+               // wplastic7Float = basicRedFloat;
                 metal8Float = basicRedFloat;
                 plastic8Float = basicRedFloat;
                 black9Float = basicRedFloat;
@@ -2007,8 +2008,8 @@ blackAdFloat = basicRedFloat;
                 red13Float = basicRedFloat;
                 plastic13Float = basicRedFloat;
                 metal13Float = basicRedFloat;
-               // metal14Float = basicRedFloat;
-                //plastic14Float = basicRedFloat;
+                metal14Float = basicRedFloat;
+                plastic14Float = basicRedFloat;
                 rubber15Float = basicRedFloat;
                  
                 
@@ -2181,7 +2182,200 @@ blackAdFloat = basicRedFloat;
             Application.Quit();
         }
          
-         
+         if (Input.GetMouseButtonDown(3))
+           {
+            //Debug.Log("fuck");
+            RaycastHit hitTag2;
+            startPos = Input.mousePosition; 
+                    Ray rayEnd = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(rayEnd,out hitTag2))
+                    {
+                       // if(!(Input.touchCount > 1))                        
+                       // if( timer)
+                       // {
+                        if(hitTag2.collider != null)
+                        {    
+
+                                if(startPos.y > textLine.transform.position.y && startPos.y > textLine2.transform.position.y&& startPos.y > textLine3.transform.position.y&& startPos.y > textLine4.transform.position.y&& startPos.y > textLine5.transform.position.y&& startPos.y > textLine6.transform.position.y&& startPos.y > textLine7.transform.position.y&& startPos.y > textLine8.transform.position.y&& startPos.y > textLine9.transform.position.y&& startPos.y > textLine10.transform.position.y&& startPos.y > textLine11.transform.position.y&& startPos.y > textLine12.transform.position.y&& startPos.y > textLine13.transform.position.y&& startPos.y > textLine14.transform.position.y )
+        {
+                             if(hitTag2.collider.tag == "background" )
+                            {
+                                state = 0;  
+                                switchZoom = true;
+                                                        
+                            } 
+        }
+                            if (hitTag2.collider.tag == "Betamate Adhesive Bonding"  )
+                            {
+                                if (state == 0){
+                                    state = 1;
+                              switchZoom = true;
+                                }else if (state != 1){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                             
+                            }
+                           
+
+                            if (hitTag2.collider.tag == "Cover Sealing"  )
+                            {
+                               if (state == 0){
+                                    state = 2;
+                              switchZoom = true;
+                                }else if (state != 2){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                              
+                            }
+                            if (hitTag2.collider.tag == "HV Connector System")
+                            {
+                               if (state == 0){
+                                    state = 3;
+                              switchZoom = true;
+                                }else if (state != 3){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+                             if (hitTag2.collider.tag == "LV Connector" )
+                            {
+                              if (state == 0){
+                                    state = 4;
+                              switchZoom = true;
+                                }else if (state != 4){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+                             if (hitTag2.collider.tag == "Fluid Connectors" )
+                            {
+                               if (state == 0){
+                                    state = 5;
+                              switchZoom = true;
+                                }else if(state != 5){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                                
+                            }
+                             if (hitTag2.collider.tag == "Structural Bonding" )
+                            {
+                              if (state == 0){
+                                    state = 6;
+                              switchZoom = true;
+                                }else if (state != 6){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hitTag2.collider.tag == "Module End Plates" )
+                            {
+                               if (state == 0){
+                                    state = 7;
+                              switchZoom = true;
+                                }else if(state != 7){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hitTag2.collider.tag == "Innovative Design for Hybrid Cooling Plate" )
+                            {
+                               if (state == 0){
+                                    state = 8;
+                              switchZoom = true;
+                                }else if (state != 8){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hitTag2.collider.tag == "Thermal Conductive Interface" )
+                            {
+                               if (state == 0){
+                                    state = 9;
+                              switchZoom = true;
+                                }else if (state != 9){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hitTag2.collider.tag == "Plastic Cell Holders" )
+                            {
+                               if (state == 0){
+                                    state = 10;
+                              switchZoom = true;
+                                }else if (state != 10){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hitTag2.collider.tag == "Battery Cell to Pack Structural Bonding" )
+                            {
+                              if (state == 0){
+                                    state = 11;
+                              switchZoom = true;
+                                }else if (state != 11){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hitTag2.collider.tag == "Prismatic Cell Bonding" )
+                            {
+                               if (state == 0){
+                                    state = 12;
+                              switchZoom = true;
+                                }else if (state != 12){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hitTag2.collider.tag == "Cell to Cell Insulation" )
+                            {
+                               if (state == 0){
+                                    state = 13;
+                              switchZoom = true;
+                                }else if (state != 13){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+                            if (hitTag2.collider.tag == "Immersion Cooling"  )
+                            {
+                               if (state == 0){
+                                    state = 14;
+                              switchZoom = true;
+                                }else if (state != 14){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+                             if (hitTag2.collider.tag == "Cooling Lines"  )
+                            {
+                               if (state == 0){
+                                    state = 15;
+                              switchZoom = true;
+                                }else if (state != 15){
+                                    state = 0;
+                                    switchZoom =true;
+                                }
+                            }
+
+
+                           
+                        }
+                        }                        
+                  //  }                    
+
+           }
          
  
         if (Input.touchCount > 0 && canSpin && !StopNextMotion)//Real Touch Inputs
@@ -2222,7 +2416,8 @@ blackAdFloat = basicRedFloat;
                     break;
 
                 case TouchPhase.Ended:
-                     // Record initial touch position.                    
+                     // Record initial touch position.  
+                                     
                     RaycastHit hitEnd;
                     Ray rayEnd = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
                     if (Physics.Raycast(rayEnd,out hitEnd))
@@ -2424,6 +2619,10 @@ blackAdFloat = basicRedFloat;
             {
                 timerTime = 0;
             }
+
+
+           
+           
 
         if(startPos.y > textLine.transform.position.y && startPos.y > textLine2.transform.position.y&& startPos.y > textLine3.transform.position.y&& startPos.y > textLine4.transform.position.y&& startPos.y > textLine5.transform.position.y&& startPos.y > textLine6.transform.position.y&& startPos.y > textLine7.transform.position.y&& startPos.y > textLine8.transform.position.y&& startPos.y > textLine9.transform.position.y&& startPos.y > textLine10.transform.position.y&& startPos.y > textLine11.transform.position.y&& startPos.y > textLine12.transform.position.y&& startPos.y > textLine13.transform.position.y&& startPos.y > textLine14.transform.position.y )
         {           
