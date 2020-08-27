@@ -273,20 +273,7 @@ public class BaseController : MonoBehaviour {
 
         Cam.transform.localPosition = pos;
     }
-    /*void UpdateZoomMouse(float ChangeInMag)
-    {
-        Cam.transform.localPosition += new Vector3(0, 0, ChangeInMag*5f);
-
-        //Clamp
-        Vector3 pos = Cam.transform.localPosition;
-        pos.z = Mathf.Clamp(pos.z, -15, -3);
-
-        float y = .5f *((pos.z+3)/-12);
-
-        pos.y = Mathf.Clamp(y,0,.5f);
-        Cam.transform.localPosition = pos;
-    }
-    */
+    
     void HandleDuelInput(float Magnitude)
     {
         Debug.Log(pastMagnitude);
@@ -309,17 +296,11 @@ public class BaseController : MonoBehaviour {
     {
         //data2.anchoredPosition = Vector3.Lerp(Vector3.zero,bottomMarker.position,t);
         d.anchoredPosition = Vector3.MoveTowards(d.anchoredPosition, bottomMarker.position,t * Time.deltaTime);
-
-
     }
     void MoveTextUp(RectTransform d,float t)
     {
         //data2.anchoredPosition = Vector3.Lerp(Vector3.zero,bottomMarker.position,t);
-        d.anchoredPosition = Vector3.MoveTowards(d.anchoredPosition, Vector3.zero,t * Time.deltaTime);
-
-        
-
-
+        d.anchoredPosition = Vector3.MoveTowards(d.anchoredPosition, Vector3.zero,t * Time.deltaTime);  
     }   
     
 
@@ -503,11 +484,11 @@ public class BaseController : MonoBehaviour {
               MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1.5f,0),4 *Time.deltaTime);
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-8),2*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
                   //Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),12.8f*Time.deltaTime);
                   //CamParent.transform.position = Vector3.MoveTowards(CamParent.transform.position,Vector3.zero,5*Time.deltaTime);
-                  if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
+                  if (Cam.transform.localPosition.z < -8 && Cam.transform.localPosition.z > -8.5)
                   {
                       switchZoom = false;
                   }
@@ -624,9 +605,9 @@ public class BaseController : MonoBehaviour {
               MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1.5f,0),4 *Time.deltaTime);
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-8),2*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
-                  if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
+                   if (Cam.transform.localPosition.z < -8 && Cam.transform.localPosition.z > -8.5)
                   {
                       switchZoom = false;
                   }
@@ -713,18 +694,18 @@ public class BaseController : MonoBehaviour {
             MoveTextDown(Adhesivebonding,1000);
             MoveTextDown(Coversealing,1000);
             MoveTextUp(HVconnectorsystem,1000);
-           MoveTextDown(LVconnector,1000);
+            MoveTextDown(LVconnector,1000);
             MoveTextDown(FluidConnectors,1000);
-             MoveTextDown(Structuralbonding,1000);
-             MoveTextDown(ModuleEndPlates,1000);
-             MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
-             MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
-             MoveTextDown(PlasticCellHolders,1000);
-             MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
-             MoveTextDown(PrismaticCellBonding,1000);
-             MoveTextDown(Celltocellinsulation,1000);
-             MoveTextDown(ImmersionCooling,1000);     
-              MoveTextDown(CoolingLines,1000);      
+            MoveTextDown(Structuralbonding,1000);
+            MoveTextDown(ModuleEndPlates,1000);
+            MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
+            MoveTextDown(ThermalConductiveInterfaceBetweenCoolingPlateandBatteryModules,1000);
+            MoveTextDown(PlasticCellHolders,1000);
+            MoveTextDown(BatteryCelltoPackStructuralBonding,1000);
+            MoveTextDown(PrismaticCellBonding,1000);
+            MoveTextDown(Celltocellinsulation,1000);
+            MoveTextDown(ImmersionCooling,1000);     
+            MoveTextDown(CoolingLines,1000);      
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(1.41f,.2f,-2.7f),4*Time.deltaTime);
              if (switchZoom){                
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-1),2*Time.deltaTime);                
@@ -1051,9 +1032,9 @@ blackAdFloat = basicRedFloat;
               MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1.5f,0),4 *Time.deltaTime);
              if (switchZoom){
-                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2*Time.deltaTime);
+                  Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-8),2*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
-                  if (Cam.transform.localPosition.z < -9.5 && Cam.transform.localPosition.z > -10.5)
+                   if (Cam.transform.localPosition.z < -8 && Cam.transform.localPosition.z > -8.5)
                   {
                       switchZoom = false;
                   }
