@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-
 [System.Serializable]
 public class SpinVelocity
 {
@@ -25,13 +22,13 @@ public class BaseController : MonoBehaviour {
     public bool canSpin = true;
     GameObject Cam,CamParent;
 
-    private float yTouch = 100;
+   // private float yTouch = 100;
 
     public SpinVelocity VerticalSpin = new SpinVelocity(.005f,6f,1f);
     public SpinVelocity HorizontalSpin = new SpinVelocity(0, 6f, 1f);
 
     public GameObject textLine;
-   public GameObject textLine2;
+    public GameObject textLine2;
     public GameObject textLine3;
     public GameObject textLine4;
     public GameObject textLine5;
@@ -46,16 +43,16 @@ public class BaseController : MonoBehaviour {
     public GameObject textLine14;
 
     public Vector2 startPos;
-    public Vector2 direction;
+   // public Vector2 direction;
     public GameObject batteryModel;
 
    
- int state = 0;
+    int state = 0;
    
     public RectTransform bottomMarker;
     
-    bool moveDown = false;
-    bool moveUp = false;
+    //bool moveDown = false;
+   // bool moveUp = false;
     public RectTransform Adhesivebonding;
     public RectTransform Coversealing;
     public RectTransform HVconnectorsystem;
@@ -143,7 +140,7 @@ public class BaseController : MonoBehaviour {
 
 
 
-    float basicREdFloat;
+    //float basicREdFloat;
     float blackAdFloat;
     float blackPlasFloat;
     float boxShapeBlackFloat;
@@ -200,44 +197,31 @@ public class BaseController : MonoBehaviour {
     float metal14Float;
     float plastic14Float;
     float rubber15Float;
-
-
-
     bool switchZoom = false;
-
- float minFloat = -3;
- float maxFloat = -10;
-
-
+    float minFloat = -3;
+    float maxFloat = -10;
     
     float basicRedFloat = 0;
-
     
     private string hitTag;
     bool timer = false;
     float timerTime;
    
-
-    public float speed =1;
-    
-
-    
-    
-
-
-
-
+    public float speed =1; 
+        
+ 	Vector2 pDelta = Vector2.zero;
 
     public bool StopNextMotion = false;
     private Vector3 pMousePos = Vector3.zero;
     private Vector2 pDoubleTouchOffset = Vector2.zero;
     private float pastMagnitude = 0;
+
+    
     private void Awake()
     {
         Cam = Camera.main.gameObject;
         CamParent = Cam.transform.parent.gameObject;
-        instance = this.GetComponent<BaseController>();
-        
+        instance = this.GetComponent<BaseController>();        
     }
     
 
@@ -261,22 +245,18 @@ public class BaseController : MonoBehaviour {
     }
     void UpdateZoom(float ChangeInMag)
     {
-        Cam.transform.localPosition += new Vector3(0, 0, ChangeInMag/200f);
-       
-        
+        Cam.transform.localPosition += new Vector3(0, 0, ChangeInMag/200f);       
         //Clamp
         Vector3 pos = Cam.transform.localPosition;
         pos.z = Mathf.Clamp(pos.z, maxFloat, minFloat);
          float y = .5f *((pos.z+3)/-12);
-
        // pos.y = Mathf.Clamp(y,0,.5f);
-
         Cam.transform.localPosition = pos;
     }
     
     void HandleDuelInput(float Magnitude)
     {
-        Debug.Log(pastMagnitude);
+      //  Debug.Log(pastMagnitude);
         //if (pastMagnitude != 0)
       //  {
             if (pastMagnitude > 200){
@@ -287,10 +267,6 @@ public class BaseController : MonoBehaviour {
         }
        // }
         pastMagnitude = Magnitude;
-
-
-
-
     }
     void MoveTextDown(RectTransform d,float t)
     {
@@ -304,30 +280,26 @@ public class BaseController : MonoBehaviour {
     }   
     
 
-   	Vector2 pDelta = Vector2.zero;
+  
     void Update () 
     {
 
         if(CamParent.transform.position.x > 2)
         {
             CamParent.transform.Translate(-3 *Time.deltaTime, 0,0);
-
         }
         if(CamParent.transform.position.x < -2)
         {
             CamParent.transform.Translate(3 *Time.deltaTime, 0,0);
-
         }
         if(CamParent.transform.position.y > 2)
         {
             CamParent.transform.Translate(0, -3 *Time.deltaTime,0);
-
         }
         if(CamParent.transform.position.y < -2)
         {
            CamParent.transform.Translate(0, 3 * Time.deltaTime,0);
         }
-
       
 
         switch(state)
@@ -350,8 +322,7 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
              MoveTextDown(CoolingLines,1000);
-             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,.1f,0),4 *Time.deltaTime);
-            
+             batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,.1f,0),4 *Time.deltaTime);                        
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-10),2f*Time.deltaTime);
                   CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
@@ -449,16 +420,8 @@ public class BaseController : MonoBehaviour {
                 plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);       
 
-
-                 
-               
-
-
-                 
-
-                //todo pull camera back to look at whole object
 
              
             break;
@@ -485,9 +448,7 @@ public class BaseController : MonoBehaviour {
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1.5f,0),4 *Time.deltaTime);
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-8),2*Time.deltaTime);
-                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);
-                  //Cam.transform.localPosition = Vector3.MoveTowards(Cam.transform.localPosition,new Vector3(0,0,-10),12.8f*Time.deltaTime);
-                  //CamParent.transform.position = Vector3.MoveTowards(CamParent.transform.position,Vector3.zero,5*Time.deltaTime);
+                  CamParent.transform.position = Vector3.Slerp(CamParent.transform.position,Vector3.zero,2*Time.deltaTime);                
                   if (Cam.transform.localPosition.z < -8 && Cam.transform.localPosition.z > -8.5)
                   {
                       switchZoom = false;
@@ -578,9 +539,7 @@ public class BaseController : MonoBehaviour {
                 plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                 
-                 
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);                
                 
 
             break;
@@ -588,11 +547,11 @@ public class BaseController : MonoBehaviour {
             case 2:
             minFloat = -5f;
             maxFloat = -10f;
-            MoveTextDown(Adhesivebonding,1000);
-            MoveTextUp(Coversealing,1000);
-            MoveTextDown(HVconnectorsystem,1000);
-           MoveTextDown(LVconnector,1000);
-            MoveTextDown(FluidConnectors,1000);
+             MoveTextDown(Adhesivebonding,1000);
+             MoveTextUp(Coversealing,1000);
+             MoveTextDown(HVconnectorsystem,1000);
+             MoveTextDown(LVconnector,1000);
+             MoveTextDown(FluidConnectors,1000);
              MoveTextDown(Structuralbonding,1000);
              MoveTextDown(ModuleEndPlates,1000);
              MoveTextDown(InnovativeDesignforHybridCoolingPlate,1000);
@@ -602,7 +561,7 @@ public class BaseController : MonoBehaviour {
              MoveTextDown(PrismaticCellBonding,1000);
              MoveTextDown(Celltocellinsulation,1000);
              MoveTextDown(ImmersionCooling,1000);
-              MoveTextDown(CoolingLines,1000);
+             MoveTextDown(CoolingLines,1000);
              batteryModel.transform.localPosition = Vector3.Lerp(batteryModel.transform.localPosition,new Vector3(0,1.5f,0),4 *Time.deltaTime);
              if (switchZoom){
                   Cam.transform.localPosition = Vector3.Slerp(Cam.transform.localPosition,new Vector3(0,0,-8),2*Time.deltaTime);
@@ -948,7 +907,7 @@ public class BaseController : MonoBehaviour {
              }
 
 
-blackAdFloat = basicRedFloat;
+                blackAdFloat = basicRedFloat;
                 blackPlasFloat = basicRedFloat;
                 boxShapeBlackFloat = basicRedFloat;
                 boxShapeMetalicFloat = basicRedFloat;
@@ -1007,8 +966,7 @@ blackAdFloat = basicRedFloat;
                 plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                 
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);                 
                 
             break;
 
@@ -1070,7 +1028,6 @@ blackAdFloat = basicRedFloat;
                  outsideFloat = 0;
              }
 
-
                  blackAdFloat = basicRedFloat;
                 blackPlasFloat = basicRedFloat;
                 boxShapeBlackFloat = basicRedFloat;
@@ -1130,8 +1087,7 @@ blackAdFloat = basicRedFloat;
                 plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-               // plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                 
+               // plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);                 
                
             break;
 
@@ -1241,8 +1197,7 @@ blackAdFloat = basicRedFloat;
                 plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                 
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);                 
                
             break;
 
@@ -1350,8 +1305,7 @@ blackAdFloat = basicRedFloat;
                 plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                 
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);                 
                
             break;
 
@@ -1484,8 +1438,7 @@ blackAdFloat = basicRedFloat;
                 plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                 
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);                 
                 
             break;
 
@@ -1547,7 +1500,6 @@ blackAdFloat = basicRedFloat;
                  teslaFloat = 0;
              }
 
-
                  blackAdFloat = basicRedFloat;
                 blackPlasFloat = basicRedFloat;
                 boxShapeBlackFloat = basicRedFloat;
@@ -1607,8 +1559,7 @@ blackAdFloat = basicRedFloat;
                 plastic11Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic12Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
                 plastic13Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);
-                 
+                plastic6Red.SetFloat("Vector1_824EC8D0",basicRedFloat);                
                 
             break;
 
@@ -1697,7 +1648,6 @@ blackAdFloat = basicRedFloat;
              }else{
                  plastic11Red.SetFloat("Vector1_824EC8D0",0);
              }
-
                  blackAdFloat = basicRedFloat;
                 blackPlasFloat = basicRedFloat;
                 boxShapeBlackFloat = basicRedFloat;
@@ -1998,9 +1948,7 @@ blackAdFloat = basicRedFloat;
              plastic13Red.SetFloat("Vector1_824EC8D0",y);
              }else{
                  plastic13Red.SetFloat("Vector1_824EC8D0",0);
-             }
-
-                
+             }                
 
                 blackAdFloat = basicRedFloat;
                 blackPlasFloat = basicRedFloat;
@@ -2345,24 +2293,22 @@ blackAdFloat = basicRedFloat;
                 plastic14.SetFloat("Vector1_824EC8D0",plastic14Float);
                 rubber15.SetFloat("Vector1_824EC8D0",rubber15Float);    
         
-      //  Debug.Log(moveDownasdasdadasdasd);
+ 
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
          
-         if (Input.GetMouseButtonDown(3))
+         if (Input.GetMouseButtonDown(5))
            {
-            //Debug.Log("fuck");
+            
             RaycastHit hitTag2;
             startPos = Input.mousePosition; 
                     Ray rayEnd = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(rayEnd,out hitTag2))
                     {
-                       // if(!(Input.touchCount > 1))                        
-                       // if( timer)
-                       // {
+                      
                         if(hitTag2.collider != null)
                         {    
 
@@ -2537,13 +2483,10 @@ blackAdFloat = basicRedFloat;
                                     state = 0;
                                     switchZoom =true;
                                 }
-                            }
-
-
-                           
+                            }                           
                         }
-                        }                        
-                  //  }                    
+                    }                        
+                                   
 
            }
          
@@ -2567,10 +2510,8 @@ blackAdFloat = basicRedFloat;
 
                         if(hit.collider != null)
                         {
-
-
                             hitTag = hit.collider.tag;   
-                            Debug.Log(hitTag);                        
+                         //   Debug.Log(hitTag);                        
 
                         }
                         
@@ -2582,7 +2523,7 @@ blackAdFloat = basicRedFloat;
                  //timer = false;      
                  if (timerTime >=.15f)
                  timer = false;
-                 Debug.Log("moving finger!!");        
+                // Debug.Log("moving finger!!");        
                     break;
 
                 case TouchPhase.Ended:
@@ -2597,14 +2538,12 @@ blackAdFloat = basicRedFloat;
                         {
                         if(hitEnd.collider != null)
                         {    
-
                                 if(startPos.y > textLine.transform.position.y && startPos.y > textLine2.transform.position.y&& startPos.y > textLine3.transform.position.y&& startPos.y > textLine4.transform.position.y&& startPos.y > textLine5.transform.position.y&& startPos.y > textLine6.transform.position.y&& startPos.y > textLine7.transform.position.y&& startPos.y > textLine8.transform.position.y&& startPos.y > textLine9.transform.position.y&& startPos.y > textLine10.transform.position.y&& startPos.y > textLine11.transform.position.y&& startPos.y > textLine12.transform.position.y&& startPos.y > textLine13.transform.position.y&& startPos.y > textLine14.transform.position.y )
         {
                              if(hitTag == "background" && hitEnd.collider.tag == "background")
                             {
                                 state = 0;  
-                                switchZoom = true;
-                                                        
+                                switchZoom = true;                                                        
                             } 
         }
                             if (hitTag == "Betamate Adhesive Bonding" && hitEnd.collider.tag == hitTag  )
